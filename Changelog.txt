@@ -1,0 +1,252 @@
+====================
+    05-01-2022     
+====================
+
+* build/make
+093e195  Makefile: Generate changelog  [xyyx]
+
+
+* frameworks/base
+b061afc  Do not show camera indicator for Face Unlock service  [LibXZR]
+679d2a5  BiometricScheduler: Cancel operation if not idle  [SagarMakhar]
+d95a4d5  FaceService: Downgrade strength to STRENGTH_WEAK  [jhenrique09]
+6c8d207  SystemUI: Tell user when face unlock detection is running  [jhenrique09]
+1e4916b  WalletActivity: Don't explicity request fp/face auth  [jhenrique09]
+7f552a0  Reset face auth on occluding app when authenticated  [jhenrique09]
+c8bd4d3  SystemUI: Improve pt-br translation for fingerprint_dialog_use_fingerprint_instead  [jhenrique09]
+4645d1e  FaceService: Allow our face unlock to be used on third-party apps  [jhenrique09]
+929b976  [1/2] Allow changing face unlock method when locked  [jhenrique09]
+ace05b3  base: Remove AOSP translations of face vendor error messages  [jhenrique09]
+f665b18  KeyguardBouncer: Don't delay showing if face auth running  [jhenrique09]
+37daf5d  base: do not use new lockscreen layout for bypass  [Ethan Halsall]
+6adf4b2  Add idle lockout message for FaceUnlock  [jhenrique09]
+4ed349b3  SystemUI: Allow listening for face only on pin/pass view  [jhenrique09]
+c915df2  Initial import of Face Unlock for S  [jhenrique09]
+29a05d9  SystemUI: Fix alarm icon  [Michael W]
+9e3dcdd  base: SystemUI: Add call strength icon to statusbar tuner  [xyyx]
+beb7371  SystemUI: Add statusbar NFC icon  [xyyx]
+a0690f1  SystemUI: Add roaming indicator to statusbar tuner  [Adithya R]
+d7bd111  fixup! SystemUI: Allow Wi-Fi/cell tiles to co-exist with provider model  [Adithya R]
+01b179a  Sharesheet: Display two rows of max ranked targets  [LuK1337]
+350774b  fixup! base: SystemUI: Unblock alarm and vibrate status bar icons  [palaych]
+d93bd04  AudioService: Remove Analog Dock from fixed-volume devices  [Vachounet]
+940c2dc  Fix edit button in screenshot share activity  [Edward Savage-Jones]
+e5eb543  SettingLib: Add deep sleep info to uptime preference  [maxwen]
+f6b9309  os: Process: Fix wrong code in isThreadInProcess  [leo zhang]
+e08503d  Select the proper request list size  [Guruprasad Gaonkar]
+ad0027d  SystemUI: Add auto brightness button to QS brightness slider  [SagarMakhar]
+4bec084  base: Rearrange bluetooth icon on statusbar  [Adithya]
+071b93a  SystemUI: DataSwitchTile: update SIMs QS icons  [Hernán Castañón Álvarez]
+0131c9e  [SQUASH] base: SystemUI: Introduce DataSwitchTile  [Christian Oder]
+48a140f  SystemUI: AmbientTile: Default the setting to 1  [Luca Stefani]
+790fade  SystemUI: AmbientTile: Actually start using SecureSetting  [LuK1337]
+b4c0847  SystemUI: AmbientTile: Use SecureSetting to change doze setting  [Luca Stefani]
+f547d5e  SystemUI: AmbientTile: Don't hardcode display settings intent  [Luca Stefani]
+a0db33b  SystemUI: Add heads up tile  [Michael Bestas]
+411ae02  base: SystemUI: Adapt tuner prefs to S settings style  [SagarMakhar]
+431a390  base: SystemUI: add VPN to the icon blacklist in tuner  [maxwen]
+aa96de7  fwb: Seperate statusbar from tuner and launch externally  [mydongistiny]
+5cf1d83  base: SystemUI: enable tuner and show in Settings  [maxwen]
+24ecc49  Revert "SystemUI: Hide more tuner preferences on production builds"  [alanndz]
+ddddb77  Revert "SystemUI: Don't show tuner warning"  [alanndz]
+0188911  SystemUI: QS: SoundTile: Don't toggle DND  [AnkitGourav]
+ee7e0eb  SystemUI: Update SoundTile  [Ali B]
+028500a  ScreenshotTile: Make default state inactive  [Anushek Prasal]
+9d00a38  ScreenshotTile: Use secondary label to indicate mode  [Anushek Prasal]
+9cbd5c7  ScreenshotTile: Improve code  [ezio84]
+44e9b05  SystemUI: Long press Caffeine for infinite duration  [chillger]
+723264d  SystemUI: CaffeineTile: Eggtimer  [phpBB3]
+b687539  SystemUI: CaffeineTile: Fix crash for longClick result  [Chris]
+9c87cd9  Brightnessbar: drawables get surface color  [Harsh  Pal]
+8112ef8  SystemUI: NfcTile: Don't create an error when editing tiles  [Michael W]
+0404c26  SystemUI: Fix the unlock sound played repeatedly  [Shufeng Hou]
+ce3bce5  SystemUI: Update monet according to new sysui stub  [Anay Wadhera]
+acb3b3b  SystemUI: KomodoKeyguardSliceProvider: cleanup  [jhonboy121]
+ad89791  SystemUI: Flags: Properly enable smartspace transition  [jhonboy121]
+1418a0b  SystemUI: Update Google assets to 12L  [Anay Wadhera]
+4049031  SystemUI: Adapt SystemUI stub for 12.1 update  [zoldycc]
+b2f5c59  SystemUI: Update smartspace jar  [jhenrique09]
+8889f9e  SystemUI: Cleanup smart space  [jhonboy121]
+fcd1b19  SystemUI: Integrate smartspace and backgesture provider  [Anay Wadhera]
+c90a464  SystemUI: Initial komodo SystemUI stub  [Anay Wadhera]
+75e633e  Revert "SystemUI: Add machine learning back gesture provider"  [alanndz]
+7905848  Revert "SystemUI: Import TensorFlow Lite model for back gesture"  [alanndz]
+7a9f085  Revert "SystemUI: Enable tuner by default"  [alanndz]
+b9ef5ab  core: Switch to ``Memochō``.  [Jyotiraditya Panda]
+53b80d7  Add button to AppErrorDialog to upload crash information to dogbin  [Till Kottmann]
+b21a4a1  !fixup Bluetooth: Update Bluetooth permissions for internal APIS. (2/4)  [Sravan voleti]
+ffe4844  Check for a2dp profile when removing stale connection events  [Zhou Song]
+01161bd  AudioService: Music resumed to speaker after call  [Gautam Manam]
+1c20b2b  BT: Add entry for MCP Service in Frameworks  [Gurpreet Ghai]
+a7283b3  BT: Add APIs to dynamically control Active profile  [Gurpreet Ghai]
+f99a830  Update Bluetooth permissions for VCP APIS (1/3)  [zhenchao]
+549d54c  VCP: frameworks and settingsLib changes for VCP Profile  [zhenchao]
+618cfc7  Bluetooth: Broadcast UI: Changes to existing files  [Sunny Kapdi]
+73043fc  BT: API to update quiet mode status in Adapter service [2/3]  [M Safoorah Banu]
+8c151bc  audio: Discard QTI only codecs when AOSP BT stack is in use  [LuK1337]
+71e441c  Bluetooth: Add constructor for sending address type  [Bhakthavatsala Raghavendra]
+3093933  A2dpSrc: Align legacy codec enumeration with AOSP(4/7)  [Satheesh Kumar Pallemoni]
+6a0c8a6  Revert "Matching codec index between frameworks and stack"  [Satheesh Kumar Pallemoni]
+566d6bc  hfp: define STATE_AUDIO_DISCONNECTING audio state  [himta ram]
+1d34630  DeviceGroup: UI frameworks changes  [Sravan voleti]
+526db3b  Group-UI: UI frameworks changes  [Sravan voleti]
+3fcd80b  Bluetooth: Add BC profile entry  [Bhakthavatsala Raghavendra]
+f79fe17  Bluetooth: Check AdapterService instance before getState.  [Sumit Deshmukh]
+a0201d4  Use BLUETOOTH_CONNECT permission instead of legacy permission  [pramod kotreshappa]
+f866d7a  Bluetooth: Update Bluetooth permissions for internal APIS. (2/4)  [Sravan voleti]
+1090c20  DeviceGroup: Frameworks changes (for dual mode devices).  [Sumit Deshmukh]
+0c3772a  Bluetooth: Ensure BLE/BT is turned on before Bonding.  [Sumit Deshmukh]
+94eb20d  Add Broadcast profile id  [pramod kotreshappa]
+a01ead7  DeviceGroup: Framework changes for Group Device operations.  [Sumit Deshmukh]
+8bd24ff  base: BT build fixes  [DennySPb]
+fc0997e  Periodic Advertisment Sync Transfer feature support  [pramod kotreshappa]
+58901b9  Add LC3 codec type.  [pramod kotreshappa]
+23e250c  Audio: Add support for lc3 codec.  [Manisha Agarwal]
+936136e  Bluetooth: Add APTX-Adaptive and APTX-TWS+ entries.  [Kiran Kelageri]
+a885774  Add callback onA2dpCodecConfigChanged  [Mingbo Zhang]
+a2cd0ed  Audio: Do not disconnect profiles till Bluetooth Off  [Gurpreet Ghai]
+b77b211  Audio: use cached BT codec info during disconnecting  [Zhou Song]
+da7ad9d  Audio: Update current active bt device of mApmConnectedDevices.  [Manisha Agarwal]
+6974e60  BT-Audio: Keep track of Active TWS+ EB device in BTHelper  [Sagar Verma]
+a3597d9  BLE: Fix NPE during start advertising  [Sravan Voleti]
+d1c70c9  Fix build errors  [Scott Lobdell]
+b7cfb22  BT: Relocate A2DP codec strings for translation  [dianlujitao]
+bc5aa48  Enable codec change request when mode changes in aptX-adaptive  [Naval saini]
+7d9d1f1  Keep a null check before accessing the BluetoothA2dpWrapper APIs.  [Satheesh Kumar Pallemoni]
+56c03ea  Bluetooth: Fix for out of bound exception  [pramod kotreshappa]
+ebf114e  BT Dev: Increase array size for codec selection in Dev Op  [Gurpreet Ghai]
+d46d76b  Keep the BluetoothHeadset finalize() method protected  [Diego Wilson]
+65632a8  Bluetooth: Fix for Global reference table overflow issue[1/2]  [Bandari Ramesh]
+f3d4179  BT: Add new intent to broadcast IOT device details  [Gurpreet Ghai]
+7bc72fb  BT_Audio: Updated Check for TWS+ switch  [Gurpreet Ghai]
+c2d14f9  TWS_A2DP: Handle active device change between TWS+ earbuds  [pramod kotreshappa]
+94f1864  audio: Add support for APTX TWSP audio codec  [Dhananjay Kumar]
+8d13084  audio: Add support for audio extended codecs  [Naresh Tanniru]
+a9f767d  Use BluetoothUtils instead of Utils  [Diego Wilson]
+92d912bd  GAP: Handle the race condition cases in auto connect logic  [Venkata Jagadeesh Garaga]
+69c3db0  Obex: Squashed commit of the following  [Sravan Kumar V]
+0dbe858  BLE: Add support for Group AD Type based scan filtering.  [Sumit Deshmukh]
+2557967  Add scan filter for Transport Discovery data  [Subramanian Srinivasan]
+9658bfd  Support CALLBACK_TYPE_SENSOR_ROUTING  [Mingbo Zhang]
+fcfcb74  Add support for Transport discovery AD type (1/2)  [Subramanian Srinivasan]
+ffa07e5  Bluetooth: TWSP: Support Battery Status information display  [Bhakthavatsala Raghavendra]
+13eb423  BT: Send info if call is CS type from telecomm service to BT apps.  [Sumit Bajpai]
+877d46d  GAP: Reset bondingInitiatedLocally flag(1/3)  [Venkata Jagadeesh Garaga]
+d57b4a2  Bluetooth-TWS: Disable outgoing connection to 2nd earbud  [Kiran Kelageri]
+725b134  Bluetooth-TWS: Disable outgoing connection for 2nd earbud.  [Kiran Kelageri]
+01f08c5  Bluetooth: Rename bluetooth property to support new P Treble rules  [Safoorah Banu Shaik]
+8d1d60c0  Bluetooth: Unpair both earbuds on unpair.  [Kiran Kelageri]
+7488d0f  Revert the change: AudioService: remove dead BT code.  [Samyak Jain]
+281c49f  Bluetooth: Add SDK API support for TWS feature (2)  [Bandari Ramesh]
+4401f7a  TWS-A2DP: Add TWS+ codec to DevUI support  [pramod kotreshappa]
+985434a  BT: Adding aptX-Adaptive codec entry to Framework  [Gurpreet Ghai]
+410f70a  Add BluetoothQualityReport class(1/2)  [Mingbo Zhang]
+5da5abd  WiredAccessoryManager: Update stream index assignment  [Harold Tan]
+efcbd5d  WiredAccessoryManager: use dev index from UEventInfo to form devPath  [Harold Tan]
+40b592e  WiredAccessoryManager: Update display port device index  [Aniket Kumar Lata]
+b7ffcc4  WiredAccessoryManager: support for multiple display ports  [Vignesh Kulothungan]
+a1d48686  audio: update WiredAccessoryManager to use ExtconUEventObserver based on events available  [Dhananjay Kumar]
+af3b26c  WiredAccessoryManager: Support for multiple extconn devices  [Haynes Mathew George]
+faece38  WiredAccessoryManager: update extcon file paths  [Aalique Grahame]
+213a8d3  WiredAccessoryManager: Add support for DisplayPort Audio  [Revathi Uddaraju]
+0997dea  PowerManager: Add proximity check on wake  [Bruno Martins]
+988d8c6  base: Enable DT2S on lockscreen based on DT2W  [Adithya R]
+1ca9c53  SystemUI: Use DT2W setting also to wake from AOD  [maxwen]
+e30a33f  base: Double tap to sleep on statusbar [1/2]  [maxwen]
+1de877b  base: Double tap to sleep on lockscreen [1/2]  [ezio84]
+6b9fe35  Adapt adapt flashlight api to 12L  [xyyx]
+58d5e3b  SystemUI: adapt flashlight api to R  [DennySPb]
+31b5a6c  SystemUI: Enable NFC tile  [Tim Schumacher]
+005ed4f  Add partial/full screenshot QS tile single tap to choose the mode, long press to fire  [ezio84]
+250292c  Add api to take screenshots  [bigrushdog]
+b71b1213  Add a sendKeycode api to BiancaUtils  [ezio84]
+69e06b28  Add Sound tile to Quick Settings  [Yoshinori Hirano]
+6a4fea6  QS: Add Sync QS Tile  [Altaf-Mahdi]
+a6ab42a  SystemUI: Add USB Tether tile  [BestPig]
+65b987a  SystemUI: Add AmbientDisplay tile  [Adnan Begovic]
+c692c09  SystemUI: add caffeine qs tile  [Keith Mok]
+583b8b1  Add BIANCA metrics const.  [Bauuuuu]
+5e07a3d  base: Add some static custom utilities  [ezio84]
+9aca245  Screenshot: Add delete action chip intent  [ganeshi4u]
+0222d8b  base: SystemUI: Allow user to add/remove QS with one click  [Andrzej Ressel]
+eab27b9  SystemUI: Update string for add tiles with one click  [mydongistiny]
+fc43f62  base: Add api to force show led lights  [ezio84]
+244a9d9  base: Global Actions with Advanced Reboot [1/2]  [maxwen]
+
+
+* manifest
+144933c  mankfest: Track our FaceUnlock  [jhenrique09]
+e86f837  manifest: proton: Remove external/zlib-ng  [alanndz]
+
+
+* packages/apps/Settings
+62b1f62  Changelog: Rework with Activity  [xyyx]
+0289526  Changelog: fix possible title pattern mismatches  [Vol Zhdanov]
+0f33bce  Changelog: use normal font instead of italic for commiter name  [Vol Zhdanov]
+cbc7b16  Changelog: Add left padding  [xyyx]
+c9e9145  Settings: update changelog activity  [dadi11]
+ef4cee3  Changelog: Fix text selection with dot  [xyyx]
+84367d4  Changelog: clean and make themeable  [xyyx]
+e1fdb49  Changelog: prettify  [pcarenza]
+552b2f4  Settings: Changelog  [david]
+be1d44b  Settings: Disable all bugreport settings  [maxwen]
+df461c8  Rearrange density options under Settings/Display  [Alex Cruz]
+7140b2f  Settings: Add LTE only setting  [inthewaves]
+c53f9cc  Settings: Run statusbar icons from Settings  [xyyx]
+99dce17  Settings: Disable face enrol on Setup Wizard  [jhenrique09]
+1d07a14  Settings: Allow using face as auth method for apps  [jhenrique09]
+01c0ec7  [2/2] Allow changing face unlock method when locked  [jhenrique09]
+5a0e724  Initial import of Face Unlock for S  [jhenrique09]
+
+
+* vendor/bianca
+9f5745a  changelog: Automatic copy to folder Changelog and commit  [alanndz]
+147c8df  vendor: scripts: Adapt changelog for bianca  [alanndz]
+a798acf  apps: Add faceunlock  [jhenrique09]
+efd8e5d  vendor: scripts: update changelog script and prettify  [sb6596]
+8a736b9  vendor: scripts: Fix changelog with broken repo forall -p  [SpiritCroc]
+488bbc8  vendor: scripts: Sanitize changelog script  [SagarMakhar]
+4fe7f2d  vendor: scripts: Fix changelog generation after repo tool update  [Lup Gabriel]
+f3b22eb  vendor: scripts: Don't call color  [Shubham Singh]
+76cd6cd  vendor: scripts: Make changelog more informative and change separator  [pcarenza]
+4953c9f  vendor: scripts: Add changelog generator  [johnnyslt]
+
+
+====================
+    04-30-2022     
+====================
+
+* vendor/bianca
+2887e9e  Move bootanimation to product  [Chirayu Desai]
+dc7eb01  bootanimation: Update bootanimation  [alanndz]
+
+
+====================
+    04-29-2022     
+====================
+
+* vendor/bianca
+3217628  bootanimation: Fix wrong tools path  [alanndz]
+19d8f30  overlay: SystemUI: Switch to custom SystemUI factory and enable flags for smartspace  [Adithya R]
+
+
+====================
+    04-28-2022     
+====================
+
+* build/make
+800917d  build: Add backuptool by default  [Pranav Vashi]
+
+
+* packages/apps/Settings
+7f4bb4d  Settings: Double tap to sleep on statusbar [2/2]  [ezio84]
+
+
+* vendor/bianca
+702c0cf  backuptool: Import backuptool from lineage  [alanndz]
+
+
+====================
+    04-27-2022     
+====================
+
