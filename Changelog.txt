@@ -1,4 +1,170 @@
 =======================
+     2022/08/29
+=======================
+
+* Repository: https://github.com/BiancaProject/android_frameworks_base/commits/13
+
+a66e78e2cb25 Fix Wakelock issue
+dbbacd143f07 GameSpaceManager: restrict broadcast to MANAGE_GAME_MODE holders only
+771bac007a02 fw/b: Add capability to allow tethering to use VPN upstreams
+
+* Repository: https://github.com/chaldeaprjkt/packages_apps_GameSpace/commits/12.1
+
+4b343c2 Add android.permission.MANAGE_GAME_MODE whitelist
+
+
+=======================
+     2022/08/28
+=======================
+
+* Repository: https://github.com/BiancaProject/android_frameworks_base/commits/13
+
+5388c8b8ffaf SystemUI: Update gamespace for A13
+11fae5466c71 GameSpaceManager: Update TaskStack listener usage
+c31dca349334 SystemUI: Add support for GameSpace
+
+* Repository: https://github.com/chaldeaprjkt/packages_apps_GameSpace/commits/12.1
+
+5d74ef1 GameSpace: update links to 13/gamespace branches
+4e9cf83 GameSpace: add proper permission to the receiver
+d3ceb0c GameSpace: THREE_FINGER_GESTURE -> SWIPE_TO_SCREENSHOT
+f8bcafc GameSpace: migrate to the new and shiny registerTaskFpsCallback()
+
+* Repository: https://github.com/BiancaProject/android_packages_apps_Settings/commits/13
+
+123a6b585a Settings: Add hotspot setting to allow VPN upstreams
+9cc19c0d0b Settings: Add Game Space support
+
+* Repository: https://github.com/BiancaProject/android_packages_modules_Connectivity/commits/13
+
+c36f79dcb Connectivity: Add capability to allow tethering to use VPN upstreams
+
+* Repository: https://github.com/BiancaProject/android_vendor_bianca/commits/13
+
+17579c9f Revert "vendor: Disable gamespace"
+c2237b1f vendor: tasks: Remove word signed from signed build
+
+
+=======================
+     2022/08/27
+=======================
+
+* Repository: https://github.com/BiancaProject/android_external_selinux/commits/13
+
+e657b3ff Revert "libsepol: Make an unknown permission an error in CIL"
+6f3902d2 selinux: add selinux_status_getenforce to header
+
+* Repository: https://github.com/BiancaProject/android_frameworks_base/commits/13
+
+cda6a7e90e05 Revert "UpdateEngine: Add perf mode binder interface"
+fe8772cb46a0 SystemUI: Show advanced when advanced reboot is on
+a4ffb92dece8 base: Remove screenshot & bugreport from power menu
+07e851ea48a5 base: Global Actions with Advanced Reboot [1/2]
+f9ff4b8c6482 AppErrors: Respect appsNotReportingCrashes for ANRs
+cafe10231c2f SystemUI: Screenshot: Avoid NPE while getting app label
+dd91f41a3d37 SystemUI: Enable session-based media actions for all apps
+488686511cfe SystemUI: Add caffeine QS tile
+52453fd8ee52 Correction in logic of roundend size calculation of SD card
+143c20d17ff0 keyguard: Do not trigger a wake up when hiding lockscreen
+fdb529f76f7a Fallback to global actions if assistant is not available
+4a37053eea1b Screenshot: Append app name to filename
+68e51a5f41a2 SystemUI: Allow snoozing SD card notification unconditionally
+e0678f841171 UpdateEngine: Add perf mode binder interface
+91978a0e61aa SystemUI: Keyguard: Fix NPE caused by Unlock animation
+
+* Repository: https://github.com/BiancaProject/android_frameworks_native/commits/13
+
+5b570be1ba Revert "require OTHER_SENSORS permission for sensors"
+
+* Repository: https://github.com/BiancaProject/android_packages_apps_Settings/commits/13
+
+e21ea2071c Settings: Add toggle for advanced reboot [2/2]
+
+* Repository: https://github.com/BiancaProject/android_vendor_bianca/commits/13
+
+56aa358f Revert "device_config: Convert location indicators to soft config"
+8be52664 Revert "vendor: overlay: Remove array/configs_base_soft"
+
+
+=======================
+     2022/08/26
+=======================
+
+* Repository: https://github.com/BiancaProject/android_frameworks_base/commits/13
+
+bac0bff8722e Fix bug Device that can't support adoptable storage cannot read the sdcard.
+
+* Repository: https://github.com/BiancaProject/android/commits/13
+
+1842b99 manifest: bianca: Track our system/libhidl
+34a56ae manifest: bianca: Track vendor/lawnicons from LawnchairLauncher
+898589b manifest: bianca: Enable Changelog repo
+
+* Repository: https://github.com/BiancaProject/android_packages_apps_Launcher3/commits/13
+
+1695965efe Revert "Implement LocalColorExtractor using colorkt-based theme engine"
+725ef1700e Revert "LocalColorExtractor: Disable local colors when using system presets"
+b6dd5a99f2 Revert "LocalColorExtractor: Update for 12L (sc-v2)"
+fb78383abc Launcher3: Properly expose GridOptionsProvider
+d442f261cb Launcher3: Show clear all button in recents overview
+063d05efe7 Workspace: Allow resizing any widget
+6f001c81c7 Launcher3: Use regular body font for app labels
+1a5c291a01 Launcher3: Fix gesture navigation fail to move to bottom
+ebdc402dd0 Launcher3: Add toggle for DT2S
+f547956b4d Launcher3: Double tap on home screen to turn off screen
+f1b212d365 LocalColorExtractor: Update for 12L (sc-v2)
+663f47fa78 LocalColorExtractor: Disable local colors when using system presets
+eedcc3dfa9 Add preference for opening AiAi suggestion settings
+a5d21663c7 Revert "Don't allow starting DeveloperOptionsFragment on non-debug builds"
+f01184ec6f Match Pixel Launcher string for Google page
+3332603ed3 Allow changing feature flags on user builds
+fd026df63c Fix Personal/Work profile tab colors in All Apps
+4c80bcf413 Fix all apps header color in dark mode
+c6f930ea7b Add ripple animation to task menu items
+329d3dbd46 Enable local colors for popup menu items
+99da5a557f Implement LocalColorExtractor using colorkt-based theme engine
+5d65d90092 CustomLauncher: google feed integration
+ab0c4ddc3e Launcher3: Add smartspace widget to 2x2 and 3x3 grids
+0f7adc3b81 Add Smartspace Widget.
+025a41803a Launcher3: Add 2x2 workspace grid option
+8cc67630f7 Launcher3: Add Settings to center of default 5x5 dock
+b2d3aa7561 Properly expose GridCustomizationsProvider
+e3ccf1b9e5 Expose themed icon setting in ThemePicker
+5062262316 Enable new app open/close animations
+0f80dc8c4d disable hard-wired QuickSearchBox widget
+720129a99f Create Custom Launcher
+
+* Repository: https://github.com/BiancaProject/android_packages_apps_Settings/commits/13
+
+249d2f0c62 Link mic + camera indicators in privacy
+
+* Repository: https://github.com/BiancaProject/android_packages_apps_ThemePicker/commits/13
+
+5cb2713 ThemePicker: Actually enable color picker
+
+* Repository: https://android.googlesource.com/platform/system/libhidl/commits/refs/tags/android-13.0.0_r1
+
+5f4e1f4 Revert "delete gBn/sConstructorMap"
+
+* Repository: https://github.com/BiancaProject/android_vendor_bianca/commits/13
+
+7fb548b9 fixup! vendor: overlay: Conditionally include lawnicons when available
+fbbc171b vendor: overlay: LauncherIcons: Generate AOSP overlay and build files
+462f0ec3 vendor: overlay: Create empty LauncherIcons
+6b35c423 vendor: overlay: Conditionally include lawnicons when available
+45a1359f vendor: Conditionally using different gms
+
+
+=======================
+     2022/08/25
+=======================
+
+* Repository: https://github.com/BiancaProject/android/commits/13
+
+1b10fac manifest: Remove external/vim
+
+
+=======================
      2022/08/24
 =======================
 
