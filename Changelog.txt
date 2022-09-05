@@ -1,4 +1,203 @@
 =======================
+     2022/09/05
+=======================
+
+* Repository: https://github.com/BiancaProject/android_frameworks_base/commits/13
+
+240464d84cf3 UpdateEngine: Add perf mode binder interface
+
+* Repository: https://github.com/BiancaProject/android/commits/13
+
+23a6a18 manifest: bianca: Track our system/update_engine
+eddb67e manifest: remove: Enable back remove devices google
+4d268c9 manifest: bianca: Remove FaceUnlock
+cbc0898 manifest: bianca: Remove prebuilt proton clang
+f6069c0 manifest: bianca: Remove packages/apps/GmsCompat
+
+* Repository: https://github.com/BiancaProject/android_packages_apps_Launcher3/commits/13
+
+7f3a8fd361 Revert "Launcher3: Allow changing app suggestion settings."
+
+* Repository: https://github.com/BiancaProject/scripts/commits/master
+
+5d02387 project_start: Fixup
+ffac33f Add project_start
+b8fdc6e aosp-rebase: Fix derp
+1b754ac blacklist: Add Changelog
+ecd4a1b Add aosp-rebase.sh
+
+* Repository: https://github.com/BiancaProject/android_system_update_engine/commits/13
+
+cca6b5dc update_engine: Add performance mode
+
+* Repository: https://gitlab.com/alanndz/vendor_gms/commits/13
+
+7ecc274 Revert "gms: Add Google Connectivify Services"
+27aaf01 gms: Add Google Connectivify Services
+3b43036 gms: Remove DevicePersonalizationPrebuiltPixel2021
+1c095f3 gms: Remove DeviceIntelligenceNetworkPrebuilt
+341333f gms: Remove TagGoogle
+b6fb3b4 gms: Remove Turbo
+182210c gms: Remove SoundPickerPrebuilt
+6439c23 gms: Remove SettingsIntelligenceGooglePrebuilt
+0921ce5 gms: Remove DocumentUIGoogle
+9760c9a gms: Remove YouTube
+dbb7a2c gms: Remove Photos
+5c1265b gms: Remove Maps
+f5946d0 gms: Remove Drive
+622174a gms: Remove FilesPrebuilt
+3947725 Brand to bianca
+
+
+=======================
+     2022/09/04
+=======================
+
+* Repository: https://github.com/BiancaProject/android_frameworks_base/commits/13
+
+e036c4326668 Restore cache clean up code in PackageManagerService
+dca96c3afe7d core: Wipe package cache on upgrade even on user build
+c069f3a8499c SystemUI: Add Sync QS Tile
+151b092537ac SystemUI: Update icon for Heads up tile.
+058344ff2307 SystemUI: Add heads up tile
+c161b0db2066 SystemUI: Add USB tethering QS tile
+915ec183f676 SystemUI: Introduce Data Switch QS Tile
+95f9bc8a5db4 SystemUI: Move caffeine qs tiles stock to qs tiles extra
+6d52cf81c891 base: SystemUI: add custom qs tiles overlay
+11966b129b7a SystemUI: Use DT2W setting also to wake from AOD
+9ff308504dce base: Enable DT2S on lockscreen based on DT2W
+1f9c4f410ab6 SystemUI: Remove unnecessary check on status bar for DoubleTapEnabled
+1dd74d940afb base: Double tap to sleep on statusbar [1/2]
+b15494f539d5 base: Double tap to sleep on lockscreen [1/2]
+0e9e3702198f PowerManager: Add proximity check on wake [1/2]
+68136c900d0a biancaUtils: Add isVoiceCapableMethod for in-call vibrations
+f251007e81f0 biancaUtils: Use Display.getCutout() to check if we have a center notch
+d2be919d32d6 biancaUtils: Add new cutouttype method
+2b35d95bccdf biancaUtils: Update notch check logic
+96357d49f2f1 biancaUtils: Method to detect a notch'd device
+4791aaeb404e biancaUtils: Adapt WiFi only check to A12
+65ae8e7b0bc1 Add more Utils helpers
+7117d2b716e4 biancaUtils: Add method to turn off the screen
+e1a24028a7ce base: Add some static custom utilities
+216d6206944d base: Add isPackageInstalled boolean
+eff7613e1c7c Screenshot: Add delete action chip intent
+2affda6f82c0 core: Switch to ``Memochō``.
+a4662b2f1d71 Add button to AppErrorDialog to upload crash information to dogbin
+859c7ae9d615 Fix screen flickering when using one handed mode
+dc0380df29e1 SystemUI: Fix double unlock sound issue
+eea011cdb7e6 SystemUI: Fix suspicious spaces around mobile icons
+6d1cefef183e base: Add back the delete action for the screen recorder notification.
+25629eabd676 BatteryService: Fix battery led not turning off when unplugged at 100%
+8e7cc5b7acdc SystemUI: Bring back separate wifi & data QS tiles
+b2b2206ba0ac SystemUI: Allow Wi-Fi/cell tiles to co-exist with provider model
+a2cddebd8db7 BatteryStatsImpl: Reset stats only above 95%
+
+* Repository: https://github.com/BiancaProject/android_packages_apps_Launcher3/commits/13
+
+4ae9499dc4 Launcher3: Fix Personal/Work profile tab colors in All Apps
+43fd2fb4cb Launcher3: Fix all apps header color in dark mode
+f99fe5cb30 Launcher3: Switch back to tertiary color for search hint
+76951dd46c Launcher3: Fix search bar UI in All Apps
+fddf21a2c8 Launcher3: Update search icon to match Settings
+b53eefdb5c Launcher3: Improve search bar UI in All Apps
+c91b5ed5ef Revert "Launcher3: Implement Hotseat searchbar"
+8da8b74f4f Launcher3: Fix gesture navigation fail to move to bottom
+86e4caf8a4 Launcher3: Add smartspace widget to 2x2 and 3x3 grids
+fa6056cf95 Add Smartspace Widget.
+898dea633e launcher3: SystemShortcut: abort uninstall action if package name is null
+f0bbe3bdff quickstep: return if recentsView is null
+91b4e6b82f Launcher3: Implement Hotseat searchbar
+372805501e Launcher3: Home press on default homescreen -> open drawer
+a793d2532e Launcher3: Adjust the icon size to the grid size
+d6ae421369 Replace 4x4 grid option with a 4x5 one
+0a2787d472 Launcher3: Add uninstall button to system shortcuts
+7c93d3dcb7 Launcher3: Add kill action to app shortcuts popup
+4ad9ade991 quickstep: RecentsView: add null check for invocations mFirstFloatingTaskView
+ba66fd721c launcher3: Don't vibrate while scrolling
+1206e7780a Launcher3: Round search bar in drawer
+65def8400e Launcher3: show clear all button in recents overview
+e0e87151dc Revert "Don't allow starting DeveloperOptionsFragment on non-debug builds"
+f9dae24a22 Launcher3: Add Google Lens scan button to recents
+63142ace6e Launcher3: Adapt home settings UI to Android 12 style
+15142d74bd IconPlatte: Don't crash when the app gives us an invalid color
+7af8548b97 Trebuchet: Invert workspace edit logic
+99822af88c Workspace: Allow resizing any widget
+c3f5ec2799 Trebuchet: add toggle for desktop and drawer labels
+6a00796482 Trebuchet: allow disabling workspace edit
+dbf5806c1b Trebuchet: Don't show move layer when editing isn't allowed
+dfb3458bec Launcher: Fix all apps view not dismissing
+79243d1238 Launcher3: Make double tap to sleep gesture optional
+df64be4ff2 Launcher3: double tap on home screen to turn off screen
+d6720d82d3 Launcher3: Allow changing app suggestion settings.
+3577c7e812 Launcher3: Edit Google feed strings to be inline with Pixels
+d039556395 Globally disable debug logging
+ba6117886f Launcher3: Add x8 workspaces
+fdadd740ff Trebuchet: Add 5x6, 5x7 and 6x6 default workspaces
+20468604ba Allow changing feature flags on user builds
+890a1e2439 Launcher3: Google feed integration
+b95246c611 Launcher3: Add 2x2 workspace grid option
+54c4373f40 Properly expose GridCustomizationsProvider
+20cd830081 Expose themed icon setting in ThemePicker
+e4c6db4793 Enable crossfade when changing theme
+384f96275c disable hard-wired QuickSearchBox widget
+
+* Repository: https://github.com/BiancaProject/android_packages_apps_Settings/commits/13
+
+0c8a733e61 Settings: Double tap to sleep on statusbar [2/2]
+486fa8a5c2 Settings: Use DT2W toggle for lockscreen DT2S
+d8ea6bffc0 Settings: Double tap to sleep on lockscreen [2/2]
+676baa181b DisplaySettings: font size in 5% steps from 80% to 130%
+dab66f0a5a Settings: Add toggle for proximity check on wake [2/2]
+
+* Repository: https://github.com/BiancaProject/android_vendor_bianca/commits/13
+
+43be5de6 vendor: Spoof redfin fingerprint for gms
+4429a93d vendor: Remove extentions
+c6984332 vendor: Move certs product to certs.mk
+47507c52 vendor: Move backuptool product to backuptool.mk
+a0397701 vendor: tasks: Remove word signed from signed build
+32cbe986 Revert "device_config: Convert location indicators to soft config"
+a4d879e6 fixup! vendor: overlay: Conditionally include lawnicons when available
+5b17fbb5 vendor: overlay: LauncherIcons: Generate AOSP overlay and build files
+c868a721 vendor: overlay: Create empty LauncherIcons
+4a843361 vendor: overlay: Conditionally include lawnicons when available
+c75e4161 vendor: Conditionally using different gms
+133b64e4 vendor: overlay: Cleanup
+96f27fff config: kernel: Update clang path to clang-r450784d
+494fa502 vendor: Dont build vim and remove bt stack
+6e70096c vendor: Exclude packages/apps/Bluetooth soong namespaces
+2f726089 generator: Don't care android.SourceDepTag
+
+* Repository: https://gitlab.com/alanndz/vendor_gms/commits/13
+
+76a467d Add missing Google Ext Services permissions
+
+
+=======================
+     2022/09/03
+=======================
+
+* Repository: https://github.com/BiancaProject/Changelog/commits/13
+
+8302236 Changelog: Per 29 August 2022 update
+
+* Repository: https://github.com/BiancaProject/android_packages_apps_Settings/commits/13
+
+191dcf453b Settings: Allow devices to disable minimum refresh rate
+75e930e03f Settings: Fix loading iconpack-based Wellbeing icon
+474b23a181 Settings: Fix Android Beam switch bar content
+99071a2d64 Settings: Allow using legacy VPN types
+2d896a87f5 Settings: Get outer NFC preference to listen for changes
+
+=======================
+     2022/09/01
+=======================
+
+* Repository: https://github.com/BiancaProject/android/commits/13
+
+060c90c manifest: bianca: Track our hardware/xiaomi
+
+=======================
      2022/08/29
 =======================
 
