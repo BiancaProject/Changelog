@@ -1,615 +1,711 @@
 =======================
-     2022/09/12
+     2022/10/11
 =======================
 
 * Repository: https://github.com/BiancaProject/android_build/commits/13
 
-a07d6a9a7 Revert "Makefile: Generate changelog"
-d2985c37b Don't make recovery patch for devices with prebuilt vendor
-420cd6a4b Move recovery-from-boot.p from /system to /vendor
-f0f17cd98 Makefile: Generate changelog
-8c1e382f5 build: Add backuptool by default
-f71598040 All operating systems are beautiful
-542e53f75 build: Add cortex-a76 to known v8-2a cores
-04e33dfd3 releasetools: Add script to sign zips
-ebc3820d4 build: Stop installing the sample APN list
-cefba655c build: Swap fake and real platform security patch levels
-de12cff01 build: Add support for faking platform security patch level
-10acfd53a build: Remove some debugging props
-48d1d0c5b releasetools: Erase package_cache upon flashing
-70544ec49 build: Add support for device tree in boot.img
-a0bcfc7d2 Add BOARD_CUSTOM_BOOTIMG_MK support
-78eae8fcc releasetools: support reading release keys out of some sort of command
-73a763bdd Remove unused locale data for recovery
-75d5e3694 Add build support for XZ ramdisks
-1c988bce4 Fix recovery image generation with LZ4 compressed ramdisk
-1ddd0c2c3 soong: add TARGET_SPECIFIC_HEADER_PATH
-12be0406e Allow a device to generically define its own headers
-4248324f4 build_image: Allow disabling custom inode count calculation
-7b8a60bbc releasetools: do not remove dynamic partitions in system-only builds
-61fe305d6 NFC: Disable build for AOSP NFC
-6974ab05c backuptool: Map extra dynamic partitions for Addon.d V3
-b537dbede Add $(PRODUCT_OUT)/install to INTERNAL_RECOVERYIMAGE_FILES
-7051a8a45 backuptool: do not unmap dynamic partition after finished
-3e2fc0545 releasetools: support dynamic partitions for backuptool
-49110af8a releasetools: Move system mount handling to backuptool
-309708175 releasetools: squash backuptool support
-ac5750211 releasetools: Use the first entry of a mount point when reading fstab
-96cd961ee Edify: Add abort message for bootloader asserts
-85a17c612 ota: Disable downgrade check
-d246e79c4 build: Separate commands in recovery foreach loops
-235a6129b build: recovery: Support adding device-specific items
-8496e14b9 build: ota: Support for install tools in /tmp/install
-138fba865 releasetools: ota_from_target_files: add FullOTA_PostValidate
-aaf01c6ce Allow override of device asserts, including multi-device support.
-9170ec0f1 core: Add support for overriding build.prop settings
-19780f086 build: Automatically replace old-style kernel header includes with new header lib
-cb3ccdd25 Add extra variables to _readonly_late_variables
-83041c17c build: Add Bianca build support
-2afd6b497 envsetup: export ANDROID_BUILD_TOP earlier
-6b5e6e2cc build: Update vendor path for bianca
-7e8bce766 Always use release-keys for ro.build.tags
-93f87799f product: Disable artifact path enforcement
-23192e6f1 Don't build QuickSearchBox
-00ba9307c Use Unix epoch time for build number
-84b9ab023 product: Don't build Source Sans Pro fonts
-158facb8c product: Remove default AOSP sounds
-f24243d9c build: Only use RRO for framework on mainline products
-124c3cfa5 mainline: Don't deduplicate ext4 images
-4106c853b build: Add Lineage config.mk support
-0711c8c91 build: Include ProtonAOSP vendor hooks
-6f2601299 fonts: Don't build Cutive Mono and Roboto fonts
+6f310d741 Revert "Makefile: Generate changelog"
+967386785 Don't make recovery patch for devices with prebuilt vendor
+7a841549e Move recovery-from-boot.p from /system to /vendor
+63a64a291 Makefile: Generate changelog
+d8c576105 build: Add backuptool by default
+b21e3495c All operating systems are beautiful
+3285e40c9 build: Add cortex-a76 to known v8-2a cores
+688c73e0e releasetools: Add script to sign zips
+ca072240e build: Stop installing the sample APN list
+377ab3c5f build: Swap fake and real platform security patch levels
+0ee80d547 build: Add support for faking platform security patch level
+9084f106c build: Remove some debugging props
+248380dc9 releasetools: Erase package_cache upon flashing
+1608a74d4 build: Add support for device tree in boot.img
+2e18b49d4 Add BOARD_CUSTOM_BOOTIMG_MK support
+aea7673ff releasetools: support reading release keys out of some sort of command
+c060a182a Remove unused locale data for recovery
+0ab01d3fe Add build support for XZ ramdisks
+c3178cf6c Fix recovery image generation with LZ4 compressed ramdisk
+9b7aa57b2 soong: add TARGET_SPECIFIC_HEADER_PATH
+1c46a0c4b Allow a device to generically define its own headers
+747045554 build_image: Allow disabling custom inode count calculation
+8550f8b54 releasetools: do not remove dynamic partitions in system-only builds
+2051ae377 NFC: Disable build for AOSP NFC
+ccaab8e69 backuptool: Map extra dynamic partitions for Addon.d V3
+40ce6a059 Add $(PRODUCT_OUT)/install to INTERNAL_RECOVERYIMAGE_FILES
+e72fd0672 backuptool: do not unmap dynamic partition after finished
+befa085ab releasetools: support dynamic partitions for backuptool
+5d0682659 releasetools: Move system mount handling to backuptool
+9c999713d releasetools: squash backuptool support
+fb9b0b3c1 releasetools: Use the first entry of a mount point when reading fstab
+99dfa1478 Edify: Add abort message for bootloader asserts
+91f1b53e5 ota: Disable downgrade check
+4e7ebae8b build: Separate commands in recovery foreach loops
+c861ab2f4 build: recovery: Support adding device-specific items
+5c4182f67 build: ota: Support for install tools in /tmp/install
+e65e8293a releasetools: ota_from_target_files: add FullOTA_PostValidate
+e79a354c2 Allow override of device asserts, including multi-device support.
+572c8c15a core: Add support for overriding build.prop settings
+81c73db27 build: Automatically replace old-style kernel header includes with new header lib
+c6ea97514 Add extra variables to _readonly_late_variables
+30ef6a611 build: Add Bianca build support
+4c60e5fe2 envsetup: export ANDROID_BUILD_TOP earlier
+2a22ee920 build: Update vendor path for bianca
+5b397c296 Always use release-keys for ro.build.tags
+c95f8e953 product: Disable artifact path enforcement
+50da58224 Don't build QuickSearchBox
+89ff6f05d Use Unix epoch time for build number
+b7c5611b0 product: Don't build Source Sans Pro fonts
+e02b15d69 product: Remove default AOSP sounds
+9fbd11304 build: Only use RRO for framework on mainline products
+e1aa2ee44 mainline: Don't deduplicate ext4 images
+8003d3b33 build: Add Lineage config.mk support
+f3b366c0e build: Include ProtonAOSP vendor hooks
+610a83274 fonts: Don't build Cutive Mono and Roboto fonts
+
+* Repository: https://github.com/BiancaProject/android_frameworks_av/commits/13
+
+789767a32b av: support per-app volume [1/3]
 
 * Repository: https://github.com/BiancaProject/android_frameworks_base/commits/13
 
-6edab663e98d UpdateEngine: Add perf mode binder interface
-e50b6e527805 Restore cache clean up code in PackageManagerService
-415221310291 core: Wipe package cache on upgrade even on user build
-44cf84a15b1c SystemUI: Add Sync QS Tile
-e1575e3f600e SystemUI: Update icon for Heads up tile.
-77f202b67c57 SystemUI: Add heads up tile
-cc88ef140f6b SystemUI: Add USB tethering QS tile
-75b85b66100a SystemUI: Introduce Data Switch QS Tile
-ea49d57f64a6 SystemUI: Move caffeine qs tiles stock to qs tiles extra
-959875c8083e base: SystemUI: add custom qs tiles overlay
-fa773146e0c9 SystemUI: Use DT2W setting also to wake from AOD
-88bfc4582505 base: Enable DT2S on lockscreen based on DT2W
-e81de8a15a86 SystemUI: Remove unnecessary check on status bar for DoubleTapEnabled
-2f41bf9a99d7 base: Double tap to sleep on statusbar [1/2]
-f12ae34ac8a6 base: Double tap to sleep on lockscreen [1/2]
-2229290d389f PowerManager: Add proximity check on wake [1/2]
-fcc87b7809f1 biancaUtils: Add isVoiceCapableMethod for in-call vibrations
-6e006812cf14 biancaUtils: Use Display.getCutout() to check if we have a center notch
-74d86bd8d1f2 biancaUtils: Add new cutouttype method
-42d4feefe4d9 biancaUtils: Update notch check logic
-f854b2973de6 biancaUtils: Method to detect a notch'd device
-8c6dc5e2cbfe biancaUtils: Adapt WiFi only check to A12
-24533af90771 Add more Utils helpers
-9fb5a51a4360 biancaUtils: Add method to turn off the screen
-19d21db0f7b8 base: Add some static custom utilities
-ce95f2f82b3a base: Add isPackageInstalled boolean
-d2bd762c19a4 Screenshot: Add delete action chip intent
-1e5d3ea0f499 core: Switch to ``Memochō``.
-e004b0e827a2 Add button to AppErrorDialog to upload crash information to dogbin
-6e958cf483c8 Fix screen flickering when using one handed mode
-6f758a2104eb SystemUI: Fix double unlock sound issue
-154591ef18c6 SystemUI: Fix suspicious spaces around mobile icons
-4a5423a5d33c base: Add back the delete action for the screen recorder notification.
-e48d7c19bf7e BatteryService: Fix battery led not turning off when unplugged at 100%
-15d4e886bec6 SystemUI: Bring back separate wifi & data QS tiles
-f38c5864e747 SystemUI: Allow Wi-Fi/cell tiles to co-exist with provider model
-2bd59d766a39 BatteryStatsImpl: Reset stats only above 95%
-351e914cfd11 Fix Wakelock issue
-ea1494a215b9 GameSpaceManager: restrict broadcast to MANAGE_GAME_MODE holders only
-10a75703963f fw/b: Add capability to allow tethering to use VPN upstreams
-7d69e21307de SystemUI: Update gamespace for A13
-09e4daba2d5a GameSpaceManager: Update TaskStack listener usage
-ba1bfadc12f9 SystemUI: Add support for GameSpace
-d2c0a70904d0 Revert "UpdateEngine: Add perf mode binder interface"
-72732b728eed SystemUI: Show advanced when advanced reboot is on
-21ce592362f4 base: Remove screenshot & bugreport from power menu
-0cfad1e7634a base: Global Actions with Advanced Reboot [1/2]
-d2916b0a668f AppErrors: Respect appsNotReportingCrashes for ANRs
-772400a33257 SystemUI: Screenshot: Avoid NPE while getting app label
-a07f5085805d SystemUI: Enable session-based media actions for all apps
-ad860416d775 SystemUI: Add caffeine QS tile
-fc258d1b8241 Correction in logic of roundend size calculation of SD card
-12160a273e00 keyguard: Do not trigger a wake up when hiding lockscreen
-c6bd5f09e108 Fallback to global actions if assistant is not available
-db9aad6ec0d6 Screenshot: Append app name to filename
-f5903eb7fd18 SystemUI: Allow snoozing SD card notification unconditionally
-f65a493d1a3a UpdateEngine: Add perf mode binder interface
-a5bdc6e50250 SystemUI: Keyguard: Fix NPE caused by Unlock animation
-9ae9ff1057b5 Fix bug Device that can't support adoptable storage cannot read the sdcard.
-829f1e34ce86 Revert "Revert "Add developer setting to set the default GPU renderer.""
-23b2d2f09106 SystemUI: Fixup
-807d929d1e91 fixup! SystemUI: Show bluetooth battery level when available
-a965563760f4 udfps: Add support for udfps on aod without dedicated sensor
-dd15187950c7 udfps: Make pressed udfp view configurable
-aacfa1b65ec3 udfps: Change window type to TYPE_DISPLAY_OVERLAY
-0f75e1d33917 udfps: Implement default udfps hbm provider
-5910c1397ed6 udfps: Trigger onFingerDown with regular action down events too
-7de3cdcc5cf6 udfps: Restore illumination dot for global hbm
-ab81a8bb8974 Screenshot: Remove scroll chip button text
-c43da94da57d SystemUI: Redesign Volume Panel the 404 way
-dcffbc5799d1 SystemUI: VolumeDialogImpl: Change bg tint for inactive rows
-37e37945c42c SystemUI: VolumeDialogImpl: Fix inactive rows tint
-342410fdfc91 SystemUI: Make the volume dialog expandable
-30ea2f313a33 VolumeDialogImpl: Fix cuttered layout when on setup or lock task mode
-8889d2bb2560 SystemUI: runtime configurable audio panel location
-058013b81d79 VolumeDialogImpl: Don't hide the default stream when adjusting the music stream
-0c7af1b681e1 VolumeDialogImpl: Respect multiple visible rows in landscape
-08a84f3cde1d SystemUI: Add left padding for keyguard slices
-b92d29e26196 SystemUI: Fix bug with user_setup_complete setting
-1d85bd5285f9 Camera: Prevent crash with prebuilt camera metadata
-47c81547fd33 Camera: Clearing exception for Extended Face
-dc0ca5dbbec8 Camera: Extend face detection
-479f032dd6fb base: Edit persist.camera.privapp.list to match with current property
-ee24bf4eb3c0 Camera: Ignore torch status update for aux or composite camera
-c352de398d8e camera: Skip HFR checks for privileged apps.
-b47c30a98e3a camera2: Add methods for backward compatibility
-bbd81e604cfc CameraManager: Fixup exposing aux camera to apps
-fae0072f4e5c Fix Photosphere/Camera FCs
-c812172c15aa Allow sending vendor- or device-specific commands to the camera HAL.
-ddaf2c581ad8 Camera2: Notify fps as Session Based Parameter
-bc31303703f0 Camera: Skip stream size check for whitelisted apps
-1ed7acd6cc73 camera: Allow selected camera apps to skip unconfigure
-9c9b8f35e481 Screenrecord: Allow to select AVC codec profile level
-e69441db7492 screenrec: Save recordings in ScreenRecords
-7ddd17bd05f1 SystemUI: allow to limit the max framerate of built-in screen recorder
-898167dafe2c SystemUI: Use same NFC icon as that in QS tile
-9a0773f73470 SystemUI: Add statusbar NFC icon
-7561b521ceab SystemUI: Update NFC tile drawable
-04b8c3778c8f SystemUI: enable NFC quick settings tile
-927cdb53470d base: Support for third party NFC features and extensions
-a02e12a1e0bf have NfcTile get an NfcAdapter directly
-e070ca57d9e0 SystemUI: Update string for add tiles with one click
-b7a476404cf7 base: SystemUI: Allow user to add/remove QS with one click
-a346aa88eade SystemUI: ic_brightness_*: drawables get surface color
-b424d903d3f7 base: Grant battery stats reset permission to Settings
-0cb7a7b62ce2 AlarmManager: Handle all gms exact alarm denials
-4ae80b21c6df config: Allow opening power menu when screen is off
-2dd21b914ed7 SystemUI: Reduce screenshot dismiss delay to 3 seconds
-530727362ac7 SystemUI: Require unlocking to use sensitive QS tiles
-4db1e4526f9c LayoutInflater: Opportunistically create views directly for performance
-f3528d6feaf3 LocalServices: Replace ArrayMap with HashMap for performance
-d5c8afc9e0c2 ThemedResourceCache: Replace ArrayMap with HashMap for performance
-c1ec8050634c AuthService: Add support for workaround side fps props
-1ce59114c90b display: Don't spam log when display state changes
-7e81734cb5b3 SystemUI: Add auto brightness button to QS brightness slider
-44631e9d464b base: Add three-fingers-swipe to screenshot [1/2]
-2202c78a7dc1 fwb: Set PACKAGE_GMS on Attestation hook
-1302370670ba Revert "SystemUI: Add support for GameSpace"
-7920112dad48 Revert "AuthService: Add support for workaround side fps props"
-5b0d137803f3 Revert "base: Support for third party NFC features and extensions"
-4ac63553412d Revert "Add config to exempt telephony-related app from location indicators"
-a94f0f8d1574 Revert "SystemUI: Allow privileged system apps to access screenshot service"
-77b2bd73f81c core: Expose method to start assistant through Binder
-ba64bbc84222 Add BIANCA metrics const.
-1c7f29b728c7 camera: Support exposing aux camera to apps
-a29a9a73c7a1 Allow APK signature scheme v1 for API 30+ apps
-35f6956e412b base: BiometricScheduler: Cancel operation if not idle
-e2c1419c333c Biometrics: Allow disabling of fingerprint cleanups
-beae8994371f Add missing STORAGE_INTERNAL permission for BackupRestoreConfirmation
-dc6dc0e5d702 Add "android.permission.READ_PHONE_STATE" to manifest
-51cee28fd4c8 fwb: SystemUI: Remove GarbageMonitor tile
-9ed6dde78203 KernelCpuUidTimeReader: Decrease log level on non-eng builds
-f776e45f6846 Disable notification channel warnings by default
-9d9a10e1bf17 aapt: Default to 0 compression ratio
-cfc3d5cc5637 Enable Binder Proxy Tracking by Uid only on eng builds
-fc219002441e base: Change dividers from Holo Blue to Pixel Blue
-c3283e11d296 aapt2: silence positional arguments warnings
-a1bb0363b08d MountService: Prevent NPE with DropBoxManager
-ff782a1b613d FATAL EXCEPTION IN SYSTEM PROCESS: android.ui
-c2f3e80100e6 CarrierConfigManager: Enable LTE+ icon
-feeea98af132 use SharedPreferences to save verify results
-5f6c5a4b55ac EasterEgg: Fix some warnings
-b0d9cfb89cbb Download: Add support to manually pause/resume download
-fee4c0c18cac base: Remove unnecessary videos
-f8e078763c54 base: Delete media tests
-091109154f9e SystemUI: Add support for GameSpace
-526c2e2dc2e3 SystemUI: Export RecordingService for External Usage
-f3be45aafd52 The surface hang up when screen on and screen off
-98eec022bc91 Fix black screen issue due to wallpaper decoding exceptions
-883b59587bbf base: set scrolling friction to 0.006f
-52bf7f994df5 AbsListView: Improve scrolling cache
-8327a3cacad9 SystemUI: Use AVCProfileMain for screen recorder
-14d5bde18409 hwui: Silence Davey logs for now
-b8ac09ec7e21 fwb: increase DEFAULT_MAX_PHANTOM_PROCESSES to 256
-04edbaa3007b Suppress FingerprintManager logspam
-98b050498f2b Reduce log verbosity: Don't spam logcat
-0d8b0e44819a Kill off provider info logspam
-e81db073daaf SystemUI: Update Bluetooth battery level assets.
-24bf3e43d12e SettingsLib: Update LTE+ icon as per new Silk design
-a1a8b716f38d SystemUI: Show bluetooth battery level when available
-466f0982550a core: jni: Switch to -O3
-e806b44cd641 AuthService: Add support for workaround side fps props
-c11f88495ea8 base: Allow disabling refresh rate lowering in battery saver
-dff66d90b04e base: Support for third party NFC features and extensions
-7f41c5f43d38 SystemUI: Always refresh power menu on UI mode change
-c8781cef5bdb SettingsLib: Apply Inter Dynamic Metrics to collapsing toolbar
-b0a3903a4f12 SystemUI: Use default letter spacing for QS tiles
-2e0b410fd1c4 Implement Inter Dynamic Metrics for system UI font
-3647901b3132 Add config to exempt telephony-related app from location indicators
-0e444ecd0da1 Limit SafetyNet workarounds to unstable GMS process
-cec6e3e7aa34 SystemUI: Use geometric 6 and 9 glyphs in PIN entry keypad
-d393e0f7a159 Alter model name to avoid SafetyNet HW attestation enforcement
-d23c7a7a3dc6 keystore: Block key attestation for SafetyNet
-1c62e7eb8b6d Spoof build fingerprint for Google Play Services
-666e1b959550 fonts: Update italic font axis for Inter
-3474372daf91 SystemUI: Update lock screen clock typography for Inter font
-af8e84140afd SystemUI: Remove nav bar background in QS customizer
-8e238dd6ff60 SystemUI: Fix QS status font weight mismatch in dark mode
-388cfd601602 fonts: Use variable font for Roboto Regular
-83dbbfa54248 enable secondary user logout support by default
-4d29f9e173b4 stop auto-granting location to system browsers
-68568786f681 SystemUI: Fix uneven volume icon padding in status bar
-be72a0ca9b97 overlays: Remove Noto Serif + Source Sans Pro font style
-1361cfcb534e Add a config to state whether a device supports increased touch sensitivity. (#2)
-1140134ff64e Editor: Disable magnifier position animation
-567a338a090e pm: Add seamless migration between test and release keys
-8c989639e645 fonts: Use fallback variant of Roboto
-5d0c2f76513a Trace: Disable debug tracing on production builds
-0d8adacf5418 SystemUI: Skip screen-on animation in all scenarios
-810fc6252471 increase default max password length to 64
-f5ba672c766f SystemUI: Allow privileged system apps to access screenshot service
-9418337403cc core: Remove old app target SDK dialog
-8ae73e4f5146 core: Remove default aspect ratio limit for old apps
-b27d2a5949b9 Show USB icon in notification instead of generic system icon
-670fb98188b9 Allow disabling USB notifications
-ef4650fb8a89 Allow disabling important developer notifications
-d52804b7cb0e Deprioritize important developer notifications
-3f06856d3ac2 SystemUI: Remove Android build number from QS footer
-63b7363b8284 SystemUI: Speed up actions expansion animation
-2acef476f3d7 fonts: Don't build real DroidSansMono
-ecef262209cd always set deprecated Build.SERIAL to UNKNOWN
-
-* Repository: https://github.com/BiancaProject/android_frameworks_native/commits/13
-
-5a5a2f0f2f libui: Allow extension of valid gralloc 1.0 buffer usage bits
-fdbb32c57b Revert "require OTHER_SENSORS permission for sensors"
-c0e1cfb1c1 CompositionEngine: Request device composition for the Udfps touched layer
-813864e4f5 surfaceflinger: Add support for Udfps extension lib
-d6ac4841aa MIUI13 devices hide their vibrator HAL behind non-default name: "vibratorfeature"
-c20cc4e247 Add dalvik-heap device configs for 8/12/16 GiB devices
-58f5b6e131 sf: avoiding unnecessary frame skip to reduce janks.
-322768a89a libbinder: Suppress log spam when unlinking death recipients
-ad0b8b3443 require OTHER_SENSORS permission for sensors
+b836fa317c33 Allow using 4G icon instead LTE [1/2]
+86efeaa7da3d BluetoothControllerImpl: Fetch battery level from any device
+ee3701b4f7bf BluetoothControllerImpl: Synchronize mConnectedDevices access
+292e6f02a9e8 fonts: Respect font scale for dynamic tracking calculations
+64c44d13ebe6 base: Implement Gsans Dynamic Metrics for system UI font
+3d886951df1e graphics: Override system fonts with user-selected overlays
+4ee928f14ecb styles: Use user fonts for Material UI themes
+4cd3b71c2c43 Add missing INTERACT_ACROSS_USERS_FULL permission
+f9c9cd2d49cd base: overlay: fix volume panel arrow in Victor and Sam icon packs
+da884fa6b113 SystemUI: Re-inflate keyguard statusbar on theme change
+bd270c788e3a IconPackKaiAndroidOverlay: fix for carriers using 5 bars of signal
+7af8096694e4 IconPack{Kai,Victor}: Fix clock icon
+29a2a14f8e35 overlays: fixup themepicker package name for IconPacks
+da98b16e622f overlays: fixup launcher package name for P20 icons
+007186e72107 SystemUI: Fix size of icon of vibrate ringer mode for additional icon packs
+339941651379 overlays: bring back icon packs
+5d873c454665 SystemUI: Fix QS tile view active tint
+2e4b5ba50b48 Fix QS clock being white on light theme
+6e04358e6097 Paint: Enable subpixel text positioning by default
+ca80832f6482 SystemUI: fix black qqs on keyguard in light theme
+2c9690adda98 fixup! SettingsLib: Fix switch bg state on color
+1830e2bed199 Improve dark mode switch color transition
+103560037465 SystemUI: Follow light/dark theme in SplitShade Header
+eb68614c3558 SystemUI: Reset to textColorPrimaryInverse for light theme
+4bedaea49218 Screenrecord: Drop low quality switch
+d5a96d886624 Screenrecord: Allow to reduce 3 second screen record timer
+008428c30034 Screenrecord: Update layout to the new spec
+edd3e78322ef Screenrecord: Update custom settings dialog drawables
+4df9d4021472 Screenrecord: Add an option to record for longer
+cd2e79748f9a Screenrecord: Save and load set preferences
+3493a3e955a0 Screenrecord: Make low quality bitrate scalable per device
+8931e68fcf9b Screenrecord: add blinking stop dot and low quality options
+0ee064366943 SQLite: Do integrity_check only once
+eecc0a1e92fb SQLiteDatabase: Catch corrupt exception during transaction
+6ef821145180 SystemUI: screenshot: open the screenshot instead of edit
+85d839611c20 SystemUI: Fix QS mobile icon disappearing on theme switch
+5e7911efae3b SystemUI: Re-evaluate system theme on UI mode change
+b4e760c6ab6a SystemUI: Calculate paged QS tiles height properly
+789be83a644a SystemUI: Fix QS clock overlapping on UI mode change
+27c136385ccb SystemUI: Add dual-tone light and dark themes for QS
+54832d628c7a SystemUI: Initialize QS tiles in inactive state
+07b2dede8985 SystemUI: Follow light/dark theme in quick settings
+4c79928d6035 Revert "Do not re-inflate QS and SB when CONFIG_UI_MODE"
+1048648a6897 SystemUI: Make QS panel change on UI mode changes
+47291af37429 SystemUI: Fix the unlock sound played repeatedly
+cd887ed95b59 Sharesheet: Display two rows of max ranked targets
+ff56fc78a8ee core: pm: Wipe package cache on upgrade
+1eb11c3ab1b0 VolumePanel: Improve Per app volume icon view
+df1a4d74bd9c SystemUI: Use App icon for per-app volume
+db6bd2040e4e base: support per-app volume [2/3]
+0e22e9744812 SystemUI: Avoid NPE in volume dialog
+ba5270766bc2 base: make volume panel look alike brightness slider
+394172415446 UpdateEngine: Add perf mode binder interface
+0a5c2b21feb1 SystemUI: Add Sync QS Tile
+1d1a114bdc9f SystemUI: Update icon for Heads up tile.
+c10e37925be0 SystemUI: Add heads up tile
+0a7865504196 SystemUI: Add USB tethering QS tile
+a8d44ecd2052 SystemUI: Introduce Data Switch QS Tile
+40f73397ae4c SystemUI: Move caffeine qs tiles stock to qs tiles extra
+752ddf88bb90 base: SystemUI: add custom qs tiles overlay
+d867b72988d7 SystemUI: Use DT2W setting also to wake from AOD
+9272c266eda3 base: Enable DT2S on lockscreen based on DT2W
+303ff4df323c SystemUI: Remove unnecessary check on status bar for DoubleTapEnabled
+2b5b745e24d1 base: Double tap to sleep on statusbar [1/2]
+44c09246d741 base: Double tap to sleep on lockscreen [1/2]
+ff400e65a5b6 PowerManager: Add proximity check on wake [1/2]
+403439468fa4 biancaUtils: Add isVoiceCapableMethod for in-call vibrations
+b8a87d57d376 biancaUtils: Use Display.getCutout() to check if we have a center notch
+903d547f217f biancaUtils: Add new cutouttype method
+e570f2ac19a8 biancaUtils: Update notch check logic
+b0bbe3f73eb0 biancaUtils: Method to detect a notch'd device
+f4671d612019 biancaUtils: Adapt WiFi only check to A12
+ce1e6d795c31 Add more Utils helpers
+5d4ab1a3172d biancaUtils: Add method to turn off the screen
+4189a2803180 base: Add some static custom utilities
+4e3928ec07a9 base: Add isPackageInstalled boolean
+cbd3ac4ba82f Screenshot: Add delete action chip intent
+6e81940ff52f core: Switch to ``Memochō``.
+54a3ebef2aac Add button to AppErrorDialog to upload crash information to dogbin
+dfedb39df556 Fix screen flickering when using one handed mode
+6f4c2e750aee SystemUI: Fix double unlock sound issue
+e6e46de9e363 SystemUI: Fix suspicious spaces around mobile icons
+200f2ead273c base: Add back the delete action for the screen recorder notification.
+154cb3346aed BatteryService: Fix battery led not turning off when unplugged at 100%
+8cb00872ad10 SystemUI: Bring back separate wifi & data QS tiles
+6d2fbfb3c38d SystemUI: Allow Wi-Fi/cell tiles to co-exist with provider model
+9a7a1b476a2c BatteryStatsImpl: Reset stats only above 95%
+7617b9c5b5a7 Fix Wakelock issue
+26bbee4abda5 GameSpaceManager: restrict broadcast to MANAGE_GAME_MODE holders only
+09988d6f8348 fw/b: Add capability to allow tethering to use VPN upstreams
+85c4c9ee81e8 SystemUI: Update gamespace for A13
+d5f3d935d7b2 GameSpaceManager: Update TaskStack listener usage
+23ae6409381f SystemUI: Add support for GameSpace
+c90b0e2561cf Revert "UpdateEngine: Add perf mode binder interface"
+2d686c9f4ecb SystemUI: Show advanced when advanced reboot is on
+369c58098641 base: Remove screenshot & bugreport from power menu
+88c19bcac059 base: Global Actions with Advanced Reboot [1/2]
+8c7030c530e3 AppErrors: Respect appsNotReportingCrashes for ANRs
+5e8765530a3e SystemUI: Screenshot: Avoid NPE while getting app label
+28b97ab59ee0 SystemUI: Enable session-based media actions for all apps
+3846e64fffc1 SystemUI: Add caffeine QS tile
+0ee1fef7616a Correction in logic of roundend size calculation of SD card
+b7d941a620b1 keyguard: Do not trigger a wake up when hiding lockscreen
+cb36edea4a4e Fallback to global actions if assistant is not available
+df24efa788a5 Screenshot: Append app name to filename
+fdaca7d85531 SystemUI: Allow snoozing SD card notification unconditionally
+652c46a7c406 UpdateEngine: Add perf mode binder interface
+9082175b7629 SystemUI: Keyguard: Fix NPE caused by Unlock animation
+a08ff6b439ac Fix bug Device that can't support adoptable storage cannot read the sdcard.
+565c00ac251b Revert "Revert "Add developer setting to set the default GPU renderer.""
+782ed09a0426 SystemUI: Fixup
+64552b13f148 fixup! SystemUI: Show bluetooth battery level when available
+0f4a0671f6bc udfps: Add support for udfps on aod without dedicated sensor
+db7f62582453 udfps: Make pressed udfp view configurable
+76b2b7b9e8bc udfps: Change window type to TYPE_DISPLAY_OVERLAY
+95133b377bda udfps: Implement default udfps hbm provider
+1cf24356bc9c udfps: Trigger onFingerDown with regular action down events too
+28ad7e3daec5 udfps: Restore illumination dot for global hbm
+f96e7a21e59d Screenshot: Remove scroll chip button text
+37756a08a714 SystemUI: Redesign Volume Panel the 404 way
+f24489f9ee1a SystemUI: VolumeDialogImpl: Change bg tint for inactive rows
+78ede2afa248 SystemUI: VolumeDialogImpl: Fix inactive rows tint
+bd62dd0b74af SystemUI: Make the volume dialog expandable
+1098e57374bf VolumeDialogImpl: Fix cuttered layout when on setup or lock task mode
+479110ab49e7 SystemUI: runtime configurable audio panel location
+de5c19dd4012 VolumeDialogImpl: Don't hide the default stream when adjusting the music stream
+b0b135cc0662 VolumeDialogImpl: Respect multiple visible rows in landscape
+f286df4abfe5 SystemUI: Add left padding for keyguard slices
+0d4d20c181f6 SystemUI: Fix bug with user_setup_complete setting
+91ff8d1f2700 Camera: Prevent crash with prebuilt camera metadata
+27276a0ce7da Camera: Clearing exception for Extended Face
+7708b99863ee Camera: Extend face detection
+c39d58201c1d base: Edit persist.camera.privapp.list to match with current property
+f70d4e3b30dd Camera: Ignore torch status update for aux or composite camera
+b77bf5a6818d camera: Skip HFR checks for privileged apps.
+d94680942b6a camera2: Add methods for backward compatibility
+92fff6a1d51e CameraManager: Fixup exposing aux camera to apps
+c2515d882d24 Fix Photosphere/Camera FCs
+dcbd9501abcc Allow sending vendor- or device-specific commands to the camera HAL.
+1eb024eb21cb Camera2: Notify fps as Session Based Parameter
+156d3b821187 Camera: Skip stream size check for whitelisted apps
+289b97fa2570 camera: Allow selected camera apps to skip unconfigure
+634c3d409673 Screenrecord: Allow to select AVC codec profile level
+23021d12d3ea screenrec: Save recordings in ScreenRecords
+f8f9b6f94773 SystemUI: allow to limit the max framerate of built-in screen recorder
+62cb5594c11e SystemUI: Use same NFC icon as that in QS tile
+273d0fb84847 SystemUI: Add statusbar NFC icon
+95dcbdaac89c SystemUI: Update NFC tile drawable
+5107f92c617c SystemUI: enable NFC quick settings tile
+196777f26723 base: Support for third party NFC features and extensions
+3faab274ea50 have NfcTile get an NfcAdapter directly
+c3f026def92c SystemUI: Update string for add tiles with one click
+f8a79dfa54a1 base: SystemUI: Allow user to add/remove QS with one click
+2917d60e0e16 SystemUI: ic_brightness_*: drawables get surface color
+17654fb47cf3 base: Grant battery stats reset permission to Settings
+d44701184e86 AlarmManager: Handle all gms exact alarm denials
+0b997b854859 config: Allow opening power menu when screen is off
+bc0a8df3c6db SystemUI: Reduce screenshot dismiss delay to 3 seconds
+db61ed5c2d9d SystemUI: Require unlocking to use sensitive QS tiles
+4754cb314a05 LayoutInflater: Opportunistically create views directly for performance
+7b5c08b96f4f LocalServices: Replace ArrayMap with HashMap for performance
+c80fd05b8112 ThemedResourceCache: Replace ArrayMap with HashMap for performance
+4bbb8e5a9cae AuthService: Add support for workaround side fps props
+746ed736ec3c display: Don't spam log when display state changes
+dbb42c7a0b9e SystemUI: Add auto brightness button to QS brightness slider
+362d1263e64c base: Add three-fingers-swipe to screenshot [1/2]
+d1ad7488074c fwb: Set PACKAGE_GMS on Attestation hook
+b167fedffca5 Revert "SystemUI: Add support for GameSpace"
+51a2ed8ad75d Revert "AuthService: Add support for workaround side fps props"
+d8d14c706f32 Revert "base: Support for third party NFC features and extensions"
+5be6bdd1f17a Revert "Add config to exempt telephony-related app from location indicators"
+e201831d2c1e Revert "SystemUI: Allow privileged system apps to access screenshot service"
+1ff7529e8597 core: Expose method to start assistant through Binder
+0ad0040e49db Add BIANCA metrics const.
+1545b7c93485 camera: Support exposing aux camera to apps
+22885d754aa7 Allow APK signature scheme v1 for API 30+ apps
+36cff9800b37 base: BiometricScheduler: Cancel operation if not idle
+ebd9d84900a2 Biometrics: Allow disabling of fingerprint cleanups
+2ad24b4c89f8 Add missing STORAGE_INTERNAL permission for BackupRestoreConfirmation
+225d5e0ce3fa Add "android.permission.READ_PHONE_STATE" to manifest
+d58231c38082 fwb: SystemUI: Remove GarbageMonitor tile
+9314638320bd KernelCpuUidTimeReader: Decrease log level on non-eng builds
+2892556c5409 Disable notification channel warnings by default
+f59f67846897 aapt: Default to 0 compression ratio
+0e6245b184ad Enable Binder Proxy Tracking by Uid only on eng builds
+676d5df1e71a base: Change dividers from Holo Blue to Pixel Blue
+081fdf4ceb5c aapt2: silence positional arguments warnings
+a054185566a1 MountService: Prevent NPE with DropBoxManager
+8f74f0027311 FATAL EXCEPTION IN SYSTEM PROCESS: android.ui
+e3acf3c5f41a CarrierConfigManager: Enable LTE+ icon
+f749227232c0 use SharedPreferences to save verify results
+ee273c99c6da EasterEgg: Fix some warnings
+fa50da2553a8 Download: Add support to manually pause/resume download
+221802e47272 base: Remove unnecessary videos
+e36d345dc045 base: Delete media tests
+154df4d93c3a SystemUI: Add support for GameSpace
+55010850df9f SystemUI: Export RecordingService for External Usage
+c093745f2908 The surface hang up when screen on and screen off
+690efe61df28 Fix black screen issue due to wallpaper decoding exceptions
+b39861e5e597 base: set scrolling friction to 0.006f
+93297367caf8 AbsListView: Improve scrolling cache
+43dde212107a SystemUI: Use AVCProfileMain for screen recorder
+a4b3b583222a hwui: Silence Davey logs for now
+cddb72f0ac1a fwb: increase DEFAULT_MAX_PHANTOM_PROCESSES to 256
+92cb4c3cc23d Suppress FingerprintManager logspam
+48ab480658de Reduce log verbosity: Don't spam logcat
+74d0b7548d93 Kill off provider info logspam
+00462ef5fef8 SystemUI: Update Bluetooth battery level assets.
+503d76665d47 SettingsLib: Update LTE+ icon as per new Silk design
+23b6ae584995 SystemUI: Show bluetooth battery level when available
+5e1a9b8aa478 core: jni: Switch to -O3
+abd92c6d0cad AuthService: Add support for workaround side fps props
+2b9328e7f74d base: Allow disabling refresh rate lowering in battery saver
+ccb80f4be088 base: Support for third party NFC features and extensions
+fcf5c34fa873 SystemUI: Always refresh power menu on UI mode change
+3f5093fda570 SettingsLib: Apply Inter Dynamic Metrics to collapsing toolbar
+4b5a504a7628 SystemUI: Use default letter spacing for QS tiles
+d3bf57dff001 Implement Inter Dynamic Metrics for system UI font
+637a0b782fcc Add config to exempt telephony-related app from location indicators
+92193d7af995 Limit SafetyNet workarounds to unstable GMS process
+fba8815f01dd SystemUI: Use geometric 6 and 9 glyphs in PIN entry keypad
+ae7064416653 Alter model name to avoid SafetyNet HW attestation enforcement
+ebd25c3edd41 keystore: Block key attestation for SafetyNet
+d630760add2c Spoof build fingerprint for Google Play Services
+57c8f050a655 fonts: Update italic font axis for Inter
+6e240e60f19e SystemUI: Update lock screen clock typography for Inter font
+0956f02c9219 SystemUI: Remove nav bar background in QS customizer
+c94733c462e6 SystemUI: Fix QS status font weight mismatch in dark mode
+75b6cbfced13 fonts: Use variable font for Roboto Regular
+253d00d1b71a enable secondary user logout support by default
+75cf5847c878 stop auto-granting location to system browsers
+01914244c6f3 SystemUI: Fix uneven volume icon padding in status bar
+b231b99c3049 overlays: Remove Noto Serif + Source Sans Pro font style
+ab277d753eeb Add a config to state whether a device supports increased touch sensitivity. (#2)
+ba061c3ead49 Editor: Disable magnifier position animation
+ef8ff3ec1461 pm: Add seamless migration between test and release keys
+79d845b39fd2 fonts: Use fallback variant of Roboto
+c9a43424f3fb Trace: Disable debug tracing on production builds
+4f3af0d51738 SystemUI: Skip screen-on animation in all scenarios
+d426664d7ac6 increase default max password length to 64
+d0186f30c25d SystemUI: Allow privileged system apps to access screenshot service
+9ca992f3c773 core: Remove old app target SDK dialog
+4bd93de343f6 core: Remove default aspect ratio limit for old apps
+6a27f8b0dff0 Show USB icon in notification instead of generic system icon
+2d6f48d6161f Allow disabling USB notifications
+33129e1ac2c1 Allow disabling important developer notifications
+efa69d45f2a0 Deprioritize important developer notifications
+5d2bb8670e12 SystemUI: Remove Android build number from QS footer
+d4946af06893 SystemUI: Speed up actions expansion animation
+2a1066a2b9de fonts: Don't build real DroidSansMono
+33a0e8cd4299 always set deprecated Build.SERIAL to UNKNOWN
 
 * Repository: https://github.com/BiancaProject/android/commits/13
 
-72b8162 manifest: bianca: Switch vendor/gms revision to 13.1
-18c663a manifest: bianca: Switch GameSpace revision to 13
-9d0a1e4 manifest: bianca: Track our system/update_engine
-5f236ad manifest: remove: Enable back remove devices google
-7070678 manifest: bianca: Remove FaceUnlock
-e70dd63 manifest: bianca: Remove prebuilt proton clang
-0832262 manifest: bianca: Remove packages/apps/GmsCompat
-d369d69 manifest: bianca: Track our hardware/xiaomi
-e4af5bb manifest: bianca: Track our system/libhidl
-48c8ebf manifest: bianca: Track vendor/lawnicons from LawnchairLauncher
-f8edeae manifest: bianca: Enable Changelog repo
-ecedbde manifest: Remove external/vim
-c786d87 manifest: bianca: Switch gms revision to 13
-79d1d4c manifest: Add README
-7bdf41e manifest: Track our hardware/qcom-caf/sm8150/media
-7038628 manifest: Track our system/tools/mkbootimg
-39550fc manifest: arrow: Bring back system repos with correct revision
-7549ab7 manifest: arrow: Remove system repos
-12a1635 manifest: arrow: Remove duplicate
-e258c72 manifest: arrow: Remove external/selinux
-8ddaa08 manifest: Rework tracking
-fff9e7b Revert "manifest: arrow: Link qssi_bt Android.bp"
-9a3489e manifest: Disable some proton repos
-1069ba5 manifest: Disable BT QTI repos
-a0540f9 manifest: Dont remove goolag devices
-19901df manifest: Disable some repos
-8fd6986 manifest: Remove duplicate exfatprogs
-6397ec6 manifest: Remove system/bt
-19a9bb9 manifest: Remove prebuilt gcc 4.9
-b299aba manifest: Remove Bluetooth
-7375ed1 manifest: Remove openssh
-211da3a manifest: Remove fuchia devices
-261e3d0 manifest: Remove crosshatch devices
-485c23d manifest: Remove bonito devices
-dca6368 manifest: Remove barbet-kernel
-a7e7dc7 manifest: Enable tracking
-bba1d8a Initial BiancaProject Android 13
+8b238f6 manifest: proton: Track ProtonWallpaperStu and RepainterServicePriv
+1ae41e8 manifest: Track our vendor/qcom/opensource/dataservices
+dc706ef manifest: bianca: Switch vendor/gms revision to 13.1
+d69e4ee manifest: bianca: Switch GameSpace revision to 13
+af8f473 manifest: bianca: Track our system/update_engine
+958c9a1 manifest: remove: Enable back remove devices google
+1af7bcb manifest: bianca: Remove FaceUnlock
+e75c928 manifest: bianca: Remove prebuilt proton clang
+55670c6 manifest: bianca: Remove packages/apps/GmsCompat
+ed74b56 manifest: bianca: Track our hardware/xiaomi
+18f2630 manifest: bianca: Track our system/libhidl
+2615cd8 manifest: bianca: Track vendor/lawnicons from LawnchairLauncher
+6036c4b manifest: bianca: Enable Changelog repo
+2c26660 manifest: Remove external/vim
+ca90ec0 manifest: bianca: Switch gms revision to 13
+8ba1646 manifest: Add README
+93ef4e6 manifest: Track our hardware/qcom-caf/sm8150/media
+56cc4c0 manifest: Track our system/tools/mkbootimg
+9d75fb1 manifest: arrow: Bring back system repos with correct revision
+8c3f020 manifest: arrow: Remove system repos
+bdc460d manifest: arrow: Remove duplicate
+238c2fd manifest: arrow: Remove external/selinux
+c202058 manifest: Rework tracking
+abde49e Revert "manifest: arrow: Link qssi_bt Android.bp"
+549b47a manifest: Disable some proton repos
+f575b7d manifest: Disable BT QTI repos
+34b38f9 manifest: Dont remove goolag devices
+881ed96 manifest: Disable some repos
+a91e0a6 manifest: Remove duplicate exfatprogs
+b4bff89 manifest: Remove system/bt
+88c38de manifest: Remove prebuilt gcc 4.9
+ed7002d manifest: Remove Bluetooth
+8c3b4e5 manifest: Remove openssh
+5e7f8e0 manifest: Remove fuchia devices
+d7cb318 manifest: Remove crosshatch devices
+539863f manifest: Remove bonito devices
+7ef25a1 manifest: Remove barbet-kernel
+506f268 manifest: Enable tracking
+e1216ea Initial BiancaProject Android 13
+
+* Repository: https://github.com/BiancaProject/android_packages_apps_Launcher3/commits/13
+
+4c9299a5d1 Launcher3: Specify the wallpaper picker package
+6229473a3f Launcher3: device_profiles: catch up to 13
+63cae36bb3 fixup! Launcher: Enable lens icon for dock searchbar
+67f000da71 Launcher: Ability to toggle themed icons for all apps
+b7acf52b8b Launcher: Display themed app icon all the time
+94e885d32b Launcher: Fix header protection height calculation
+503fc4e7ed Launcher: Move searchbar toggle out of recents category
+00f8136480 Launcher: Add a toggle to disable hotseat searchbar
+84c30d286b Launcher: Add restart action for toggling settings
+35f8827882 Launcher: Make recents lens button optional
+e7c2706fd9 Launcher: Make lens available without lens package
+c5d7980287 Launcher: Enable lens icon for dock searchbar
+8687b69729 Launcher: Rearrange home settings layout
+80d8f9649a Launcher: Re-organize settings
+3bb1416f25 Launcher: No Calendarwidget 4x4 widget displayed
+819ba5ffc3 Launcher: Stability NullPointer issue
+efc0206072 Launcher: Better hotseat searchbar colors
+fd7c6ee796 Launcher3: Implement Hotseat searchbar
+be68707f8c Revert "Launcher3: Allow changing app suggestion settings."
+d71cecc6a8 Launcher3: Fix Personal/Work profile tab colors in All Apps
+20d9b62996 Launcher3: Fix all apps header color in dark mode
+91c56277c1 Launcher3: Switch back to tertiary color for search hint
+b44087e403 Launcher3: Fix search bar UI in All Apps
+d0d75224c5 Launcher3: Update search icon to match Settings
+19996c499d Launcher3: Improve search bar UI in All Apps
+e6edff93b3 Revert "Launcher3: Implement Hotseat searchbar"
+6bd5e93c20 Launcher3: Fix gesture navigation fail to move to bottom
+601b006e33 Launcher3: Add smartspace widget to 2x2 and 3x3 grids
+b42258f526 Add Smartspace Widget.
+ee2dd5269f launcher3: SystemShortcut: abort uninstall action if package name is null
+b9c80b9442 quickstep: return if recentsView is null
+9d668a2b48 Launcher3: Implement Hotseat searchbar
+11411cc515 Launcher3: Home press on default homescreen -> open drawer
+fb572a1714 Launcher3: Adjust the icon size to the grid size
+e6a9ca2dd4 Replace 4x4 grid option with a 4x5 one
+73f1922d92 Launcher3: Add uninstall button to system shortcuts
+e05e896054 Launcher3: Add kill action to app shortcuts popup
+dc9c391d4c quickstep: RecentsView: add null check for invocations mFirstFloatingTaskView
+863935a6e7 launcher3: Don't vibrate while scrolling
+9606526ad9 Launcher3: Round search bar in drawer
+df1702eee4 Launcher3: show clear all button in recents overview
+f6726e1342 Revert "Don't allow starting DeveloperOptionsFragment on non-debug builds"
+b83de0ac45 Launcher3: Add Google Lens scan button to recents
+53abb78e78 Launcher3: Adapt home settings UI to Android 12 style
+aca29dbba4 IconPlatte: Don't crash when the app gives us an invalid color
+769bce443f Trebuchet: Invert workspace edit logic
+dbcf5df528 Workspace: Allow resizing any widget
+b5ed0146bf Trebuchet: add toggle for desktop and drawer labels
+2b808e0cbb Trebuchet: allow disabling workspace edit
+66bd45383a Trebuchet: Don't show move layer when editing isn't allowed
+2c4e3cdc24 Launcher: Fix all apps view not dismissing
+86aad2c6a9 Launcher3: Make double tap to sleep gesture optional
+5a04e67d14 Launcher3: double tap on home screen to turn off screen
+62caa5a90f Launcher3: Allow changing app suggestion settings.
+b0cf5af3e8 Launcher3: Edit Google feed strings to be inline with Pixels
+6020d1851b Globally disable debug logging
+22a10f8a9b Launcher3: Add x8 workspaces
+b72adf28f2 Trebuchet: Add 5x6, 5x7 and 6x6 default workspaces
+eb8954ee7f Allow changing feature flags on user builds
+744636de8e Launcher3: Google feed integration
+16ed7c0e96 Launcher3: Add 2x2 workspace grid option
+45576dc232 Properly expose GridCustomizationsProvider
+31a889c366 Expose themed icon setting in ThemePicker
+be0faef41b Enable crossfade when changing theme
+e97a3a915f disable hard-wired QuickSearchBox widget
+b528274ff0 Create Custom Launcher
 
 * Repository: https://github.com/BiancaProject/android_packages_apps_Settings/commits/13
 
-d16ed0b433 Settings: Double tap to sleep on statusbar [2/2]
-31030b7bf2 Settings: Use DT2W toggle for lockscreen DT2S
-4ac9bb9203 Settings: Double tap to sleep on lockscreen [2/2]
-dea1d132ef DisplaySettings: font size in 5% steps from 80% to 130%
-4630562dc5 Settings: Add toggle for proximity check on wake [2/2]
-dfc0870132 Settings: Allow devices to disable minimum refresh rate
-33a08737b3 Settings: Fix loading iconpack-based Wellbeing icon
-fa02b79de3 Settings: Fix Android Beam switch bar content
-1ae6e7790c Settings: Allow using legacy VPN types
-89b5437527 Settings: Get outer NFC preference to listen for changes
-8824a90a80 Settings: Add hotspot setting to allow VPN upstreams
-ae2de8299f Settings: Add Game Space support
-6f7c3a99a5 Settings: Add toggle for advanced reboot [2/2]
-c45dd44297 Link mic + camera indicators in privacy
-5b31d3df73 Settings: Display auto rotate settings instead of toggle
-170513802f Settings: Add three-fingers-swipe to screenshot [2/2]
-ec53c2659a Settings: Fixup start padding for battery usage graph
-633f8bd059 Settings: Update some lottie animations
-7fe6979c38 Settings: Update settings animations
-bb939299a5 Settings: import missing lottie animations
-56c6abf450 Settings: Added missing icons in network and internet menu
-9dcd01a4ad Drawables: Dark mode support for app installation restriction icon
-a51313c5b4 Settings: Import missing lottie swipe fingerprint from redfin
-815f1fa5fe WifiDisplaySettings: Fix some NPE
-060943e6c6 Settings: stop logspill from ProcessStats
-1f21bce082 Settings: Add missing icons in Network and Internet
-bb3ebf80d4 Settings: Fix invalid private DNS help text if URI is missing
-720a3cedb7 Settings: Enable Quick Wallet settings for all devices with NFC
-1a65244b33 Revert "Revert "Add developer setting to set the default GPU renderer.""
-63487d4d96 Settings: disable all bugreport settings
-5d83a1540b Settings: Disable Storage Manager
-cf0b7cf59b Settings: Enable gesture settings
-b896ac377a firmwareversion: Hide Mainline module version
-53fe8c9c10 BasebandVersionDialogController: Trim duplicated baseband if needed
-d75f14fe30 Settings: Build our support preferences library
-b358086a11 Add back SELinux info
-bfe1e4e26a Settings: values: Better string for maintainer_name
-16b27cdf60 Settings: xml: Disable selectable for maintainer name
-4c04aaa8f7 Settings: Do not translate maintainer strings
-0bbf942352 Settings: Use an xml property for maintainer string
-a27fe83152 Settings: Add simple maintainer string
-70ff3a4ca6 Settings: Add toggle for 60Hz refresh rate on battery saver
-d8526470e3 Settings: Add preference for maximum screen refresh rate
-7a76584b46 Settings: Add preference for KEY_MIN_REFRESH_RATE
-9e5fe928cb Settings: Adapt custom rom version to bianca
-5afef2b46b Settings: Redesign BiancaProject's Logo
-b521f5f942 Settings: Add BiancaProject logo
-4794e449ce add fp edu lottie animation
-de7b079a7f Settings: Add missing illustration for camera gesture
-b5c377dddd Settings: Bring in missing lottie animations
-7b4d9b32f2 Link location indicators toggle in privacy settings
-1c613e4da9 Use default letter spacing for category titles
-3efebe2cdc Ignore custom app space management activities
-1e3eceaa3b Add package name to installed app details
-0ddb2e6e10 Remove app uninstall and disable confirmation dialogs
-8aa65eee4e Fix inconsistent USB preference screen title
-0c875cf99e Unlock mobile network settings when airplane mode is on
-10238e82f7 Launch mobile network settings on main activity stack
-16e6b5736e Add auto-generated translations for custom ROM version
-b972e399c1 Add custom ROM version entry
-b460f9725b Expose feature flag UI on all builds
-802a466eec Expand abbreviation in average memory usage string
+0b29962e04 Settings: Allow using 4G icon instead LTE [2/2]
+3c869b6e86 Settings: support per-app volume [3/3]
+5d6e208117 Settings: Double tap to sleep on statusbar [2/2]
+cfff246527 Settings: Use DT2W toggle for lockscreen DT2S
+4e7b36095b Settings: Double tap to sleep on lockscreen [2/2]
+da760d14eb DisplaySettings: font size in 5% steps from 80% to 130%
+fffd125d58 Settings: Add toggle for proximity check on wake [2/2]
+b4f58ff1f7 Settings: Allow devices to disable minimum refresh rate
+688a7d5628 Settings: Fix loading iconpack-based Wellbeing icon
+0549053577 Settings: Fix Android Beam switch bar content
+9f3362761f Settings: Allow using legacy VPN types
+64a06baad6 Settings: Get outer NFC preference to listen for changes
+bcff6e734f Settings: Add hotspot setting to allow VPN upstreams
+18639631f1 Settings: Add Game Space support
+ac59d6df8a Settings: Add toggle for advanced reboot [2/2]
+ac0e29fbc6 Link mic + camera indicators in privacy
+4ca02c7fcf Settings: Display auto rotate settings instead of toggle
+002039ea1d Settings: Add three-fingers-swipe to screenshot [2/2]
+54ba157807 Settings: Fixup start padding for battery usage graph
+5948accd13 Settings: Update some lottie animations
+687257e063 Settings: Update settings animations
+2fe7148391 Settings: import missing lottie animations
+3a22d25f40 Settings: Added missing icons in network and internet menu
+1fc0a0233b Drawables: Dark mode support for app installation restriction icon
+09f43822aa Settings: Import missing lottie swipe fingerprint from redfin
+82773036a6 WifiDisplaySettings: Fix some NPE
+ef072d4737 Settings: stop logspill from ProcessStats
+27de547f70 Settings: Add missing icons in Network and Internet
+e861bdd4df Settings: Fix invalid private DNS help text if URI is missing
+0bc45e537a Settings: Enable Quick Wallet settings for all devices with NFC
+f144b905f9 Revert "Revert "Add developer setting to set the default GPU renderer.""
+f494cef81e Settings: disable all bugreport settings
+93d4f3af8a Settings: Disable Storage Manager
+03b71f36c5 Settings: Enable gesture settings
+6a4ba99ea2 firmwareversion: Hide Mainline module version
+7494ed2bdf BasebandVersionDialogController: Trim duplicated baseband if needed
+1bea252bfb Settings: Build our support preferences library
+9387f6fed7 Add back SELinux info
+14fa1d9bb9 Settings: values: Better string for maintainer_name
+d92112cf98 Settings: xml: Disable selectable for maintainer name
+cfa835aafd Settings: Do not translate maintainer strings
+e47f72dc51 Settings: Use an xml property for maintainer string
+bab7b20262 Settings: Add simple maintainer string
+551a652e84 Settings: Add toggle for 60Hz refresh rate on battery saver
+af75db7515 Settings: Add preference for maximum screen refresh rate
+32059eed16 Settings: Add preference for KEY_MIN_REFRESH_RATE
+fc9cbef50a Settings: Adapt custom rom version to bianca
+ddd16cb292 Settings: Redesign BiancaProject's Logo
+f6389526a5 Settings: Add BiancaProject logo
+987d4b35fd add fp edu lottie animation
+9c3379941b Settings: Add missing illustration for camera gesture
+187f3d303b Settings: Bring in missing lottie animations
+1fb321f24c Link location indicators toggle in privacy settings
+e371276790 Use default letter spacing for category titles
+872d8140a2 Ignore custom app space management activities
+47004a0a85 Add package name to installed app details
+a22933f06c Remove app uninstall and disable confirmation dialogs
+74e718aa9d Fix inconsistent USB preference screen title
+444311218e Unlock mobile network settings when airplane mode is on
+b55cb93d64 Launch mobile network settings on main activity stack
+a34fd17190 Add auto-generated translations for custom ROM version
+9991bdf5cc Add custom ROM version entry
+7976c0dc9b Expose feature flag UI on all builds
+da56a3bb14 Expand abbreviation in average memory usage string
 
-* Repository: https://github.com/BiancaProject/scripts/commits/master
+* Repository: https://github.com/BiancaProject/android_packages_modules_Connectivity/commits/13
 
-d95ea37 aosp-rebase: More quiet
-a8ac707 a little fixup
-0c7ed9c a little fixup
+85cfccae7 Connectivity: Add capability to allow tethering to use VPN upstreams
+4e7af8d5a Optimize reportNetworkConnectivity permission check
+9fbc3161b skip reportNetworkConnectivity() when permission is revoked
+b40cff35a Remove DUN requirement for tethering
 
 * Repository: https://github.com/BiancaProject/android_vendor_bianca/commits/13
 
-18260bb7 vendor: Update fp redfin to September patch
+ce0fcd1a vendor: Update fp redfin to October patch
 
 * Repository: https://github.com/LawnchairLauncher/lawnicons/commits/develop
 
-d0c9cdf Merge pull request #649 from daywalk3r666/daywalk3r666-patch-1
-8c2dbf7 Rename branch name
-32338ae Update grayscale_icon_map.xml
-458b27d Add Lawnicons icon
+5faca35 `strings.xml`: Re-arrange & add descriptions
+669968a Change default status bar color to teal
 
 
 =======================
-     2022/09/11
-=======================
-
-* Repository: https://github.com/LawnchairLauncher/lawnicons/commits/develop
-
-0622e29 Merge pull request #646 from Markellas/develop
-99b7b99 Add files via upload
-85567cb Update grayscale_icon_map.xml
-d4fd884 Added Yandex app icon
-
-
-=======================
-     2022/09/10
-=======================
-
-
-=======================
-     2022/09/09
-=======================
-
-
-=======================
-     2022/09/08
+     2022/10/10
 =======================
 
 * Repository: https://github.com/LawnchairLauncher/lawnicons/commits/develop
 
-7eeb2fc Merge pull request #644 from dercodeling/develop
+ac8f3bd Add Zepto, bigbasket and more  (#742)
+c26a9ff Add Bitmoji (#744)
 
 
 =======================
-     2022/09/07
+     2022/10/09
 =======================
+
+* Repository: https://github.com/LawnchairLauncher/lawnicons/commits/develop
+
+7e0c356 Add Chrome remote desktop (#578)
+804078b Add Leboncoin (#720)
+bedf6c6 Clarifying stale message
+4d69f90 `close_stale_prs`: Remove `debug-only` & add label when unstale
+a8889e2 Test "close PRs that are still open after 60 days"
+bc39661 Fix running ktlint job limits
+56188d7 Add 3 new icons and link 3 duplicate icons into one (#741)
+889fd2d New icons (#736)
+
+
+=======================
+     2022/10/08
+=======================
+
+* Repository: https://github.com/LawnchairLauncher/lawnicons/commits/develop
+
+e1b590b Reformat all Kotlin files
+61a1b3b Add Kotlinter to lint Kotlin style
+3d8ca43 Remove duplicates (#738)
+d7e8429 Add 5 new icons (#740)
+63588da Clarifying "Fixes (#)" note
+f991a56 Update grayscale_icon_map.xml (#737)
+ec7f525 Fix sizing issues from my previous PR / Clean Map a little (#734)
+2d4a722 Several icons added (#735)
+871b1c7 Add Bank Of Ireland (#733)
+
+
+=======================
+     2022/10/07
+=======================
+
+* Repository: https://github.com/LawnchairLauncher/lawnicons/commits/develop
+
+f6e6398 Add Gcam LMC version (#729)
+b40e491 Add Moodle (#731)
+6aa19bd Update dependencies
+df68e1c Cleanup and minify SVGs
+6a6c289 Change pre-S color scheme to Lawnchair Green
+d3e33ff Optimize imports
+707e41c Use LargeTopAppBar
+
+
+=======================
+     2022/10/06
+=======================
+
+* Repository: https://github.com/LawnchairLauncher/lawnicons/commits/develop
+
+ff50c14 Cleanup maven repos
+06c5f74 Kotlin 1.7.20 (#727)
+c702f99 Rename .github/close_stale_prs.yml to .github/workflows/close_stale_prs.yml
+76926be Create GitHub action for closing stale PRs
+
+
+=======================
+     2022/10/05
+=======================
+
+* Repository: https://github.com/LawnchairLauncher/lawnicons/commits/develop
+
+aa34f59 Add Snapdrop (#503)
+ab0936c Add Read You (#507)
+a69101d Add OpenAPK (#523)
+4ef9983 Add Revolt (#527)
+db1e6f9 Add Catima (#546)
+
+
+=======================
+     2022/10/04
+=======================
+
+* Repository: https://github.com/BiancaProject/android_frameworks_native/commits/13
+
+7e4a1cb641 libui: Allow extension of valid gralloc 1.0 buffer usage bits
+2321539053 CompositionEngine: Request device composition for the Udfps touched layer
+e9d1544534 surfaceflinger: Add support for Udfps extension lib
+cd585ed3ee MIUI13 devices hide their vibrator HAL behind non-default name: "vibratorfeature"
+b6b2ec5e8a Add dalvik-heap device configs for 8/12/16 GiB devices
+0c0f0f7f55 sf: avoiding unnecessary frame skip to reduce janks.
+883c89d739 libbinder: Suppress log spam when unlinking death recipients
+
+* Repository: https://github.com/BiancaProject/android_packages_modules_Permission/commits/13
+
+dba398905 stop auto-granting location to system browsers
+
+* Repository: https://github.com/BiancaProject/android_vendor_bianca/commits/13
+
+4842c1ba vendor: fonts: Add nothingdot font style
+
+* Repository: https://github.com/LawnchairLauncher/lawnicons/commits/develop
+
+83af944 Add Printers (#533)
+69059ee Add 8 icons and link 3 icons (#718)
+9e2a15a Add Shareme (#722)
+
+
+=======================
+     2022/10/03
+=======================
+
+* Repository: https://github.com/LineageOS/android_external_ntfs-3g/commits/lineage-19.1
+
+7471d640 config.h: Update version to 2022.5.17
 
 * Repository: https://github.com/BiancaProject/android/commits/13
 
-5fef583 Manifest for Android 13.0.0 Release 4
+75b03c9 Manifest for Android 13.0.0 Release 7 (TP1A.221005.002)
+
+* Repository: https://github.com/BiancaProject/android_packages_apps_ThemePicker/commits/13
+
+f80175e ThemePicker: Introduce font picker
 
 * Repository: https://github.com/LawnchairLauncher/lawnicons/commits/develop
 
-ecb10e3 Add project icon to .idea
-0c73d97 Change join shape of AnkiDroid icon to prevent unwanted artefacts
-585988e  Add AnkiDroid, Nebula and Flux icons
+c66103e Add afk_arena icon (#721)
+1f6cc50 Cleanup and minify SVGs
 
 
 =======================
-     2022/09/06
+     2022/10/02
 =======================
 
-* Repository: https://github.com/BiancaProject/Changelog/commits/13
+* Repository: https://github.com/BiancaProject/android_packages_apps_ThemePicker/commits/13
 
-f8fe3f6 Changelog: Update README
-287014b Changelog: 5 September 2022 Update
-
-* Repository: https://github.com/ArrowOS/android_vendor_qcom_opensource_usb/commits/arrow-13.0
-
-e47ccc9 usb: Set the USB model to something more device specific
-
-
-=======================
-     2022/09/05
-=======================
-
-* Repository: https://github.com/BiancaProject/android_packages_apps_Launcher3/commits/13
-
-7f3a8fd361 Revert "Launcher3: Allow changing app suggestion settings."
-
-* Repository: https://github.com/BiancaProject/scripts/commits/master
-
-5d02387 project_start: Fixup
-ffac33f Add project_start
-b8fdc6e aosp-rebase: Fix derp
-1b754ac blacklist: Add Changelog
-ecd4a1b Add aosp-rebase.sh
-
-* Repository: https://github.com/BiancaProject/android_system_update_engine/commits/13
-
-cca6b5dc update_engine: Add performance mode
-
-* Repository: https://gitlab.com/alanndz/vendor_gms/commits/13.1
-
-7ecc274 Revert "gms: Add Google Connectivify Services"
-27aaf01 gms: Add Google Connectivify Services
-3b43036 gms: Remove DevicePersonalizationPrebuiltPixel2021
-1c095f3 gms: Remove DeviceIntelligenceNetworkPrebuilt
-341333f gms: Remove TagGoogle
-b6fb3b4 gms: Remove Turbo
-182210c gms: Remove SoundPickerPrebuilt
-6439c23 gms: Remove SettingsIntelligenceGooglePrebuilt
-0921ce5 gms: Remove DocumentUIGoogle
-9760c9a gms: Remove YouTube
-dbb7a2c gms: Remove Photos
-5c1265b gms: Remove Maps
-f5946d0 gms: Remove Drive
-622174a gms: Remove FilesPrebuilt
-3947725 Brand to bianca
-
-
-=======================
-     2022/09/04
-=======================
-
-* Repository: https://github.com/BiancaProject/android_packages_apps_Launcher3/commits/13
-
-4ae9499dc4 Launcher3: Fix Personal/Work profile tab colors in All Apps
-43fd2fb4cb Launcher3: Fix all apps header color in dark mode
-f99fe5cb30 Launcher3: Switch back to tertiary color for search hint
-76951dd46c Launcher3: Fix search bar UI in All Apps
-fddf21a2c8 Launcher3: Update search icon to match Settings
-b53eefdb5c Launcher3: Improve search bar UI in All Apps
-c91b5ed5ef Revert "Launcher3: Implement Hotseat searchbar"
-8da8b74f4f Launcher3: Fix gesture navigation fail to move to bottom
-86e4caf8a4 Launcher3: Add smartspace widget to 2x2 and 3x3 grids
-fa6056cf95 Add Smartspace Widget.
-898dea633e launcher3: SystemShortcut: abort uninstall action if package name is null
-f0bbe3bdff quickstep: return if recentsView is null
-91b4e6b82f Launcher3: Implement Hotseat searchbar
-372805501e Launcher3: Home press on default homescreen -> open drawer
-a793d2532e Launcher3: Adjust the icon size to the grid size
-d6ae421369 Replace 4x4 grid option with a 4x5 one
-0a2787d472 Launcher3: Add uninstall button to system shortcuts
-7c93d3dcb7 Launcher3: Add kill action to app shortcuts popup
-4ad9ade991 quickstep: RecentsView: add null check for invocations mFirstFloatingTaskView
-ba66fd721c launcher3: Don't vibrate while scrolling
-1206e7780a Launcher3: Round search bar in drawer
-65def8400e Launcher3: show clear all button in recents overview
-e0e87151dc Revert "Don't allow starting DeveloperOptionsFragment on non-debug builds"
-f9dae24a22 Launcher3: Add Google Lens scan button to recents
-63142ace6e Launcher3: Adapt home settings UI to Android 12 style
-15142d74bd IconPlatte: Don't crash when the app gives us an invalid color
-7af8548b97 Trebuchet: Invert workspace edit logic
-99822af88c Workspace: Allow resizing any widget
-c3f5ec2799 Trebuchet: add toggle for desktop and drawer labels
-6a00796482 Trebuchet: allow disabling workspace edit
-dbf5806c1b Trebuchet: Don't show move layer when editing isn't allowed
-dfb3458bec Launcher: Fix all apps view not dismissing
-79243d1238 Launcher3: Make double tap to sleep gesture optional
-df64be4ff2 Launcher3: double tap on home screen to turn off screen
-d6720d82d3 Launcher3: Allow changing app suggestion settings.
-3577c7e812 Launcher3: Edit Google feed strings to be inline with Pixels
-d039556395 Globally disable debug logging
-ba6117886f Launcher3: Add x8 workspaces
-fdadd740ff Trebuchet: Add 5x6, 5x7 and 6x6 default workspaces
-20468604ba Allow changing feature flags on user builds
-890a1e2439 Launcher3: Google feed integration
-b95246c611 Launcher3: Add 2x2 workspace grid option
-54c4373f40 Properly expose GridCustomizationsProvider
-20cd830081 Expose themed icon setting in ThemePicker
-e4c6db4793 Enable crossfade when changing theme
-384f96275c disable hard-wired QuickSearchBox widget
+a552e06 ThemePicker: Fix crash when applying default icon pack
+fddcf2c ThemePicker: bring back icon pack customization
 
 * Repository: https://github.com/BiancaProject/android_vendor_bianca/commits/13
 
-43be5de6 vendor: Spoof redfin fingerprint for gms
-4429a93d vendor: Remove extentions
-c6984332 vendor: Move certs product to certs.mk
-47507c52 vendor: Move backuptool product to backuptool.mk
-a0397701 vendor: tasks: Remove word signed from signed build
-32cbe986 Revert "device_config: Convert location indicators to soft config"
-a4d879e6 fixup! vendor: overlay: Conditionally include lawnicons when available
-5b17fbb5 vendor: overlay: LauncherIcons: Generate AOSP overlay and build files
-c868a721 vendor: overlay: Create empty LauncherIcons
-4a843361 vendor: overlay: Conditionally include lawnicons when available
-c75e4161 vendor: Conditionally using different gms
-133b64e4 vendor: overlay: Cleanup
-96f27fff config: kernel: Update clang path to clang-r450784d
-494fa502 vendor: Dont build vim and remove bt stack
-6e70096c vendor: Exclude packages/apps/Bluetooth soong namespaces
-2f726089 generator: Don't care android.SourceDepTag
-
-* Repository: https://gitlab.com/alanndz/vendor_gms/commits/13.1
-
-76a467d Add missing Google Ext Services permissions
-
-
-=======================
-     2022/09/03
-=======================
-
-* Repository: https://github.com/BiancaProject/Changelog/commits/13
-
-8302236 Changelog: Per 29 August 2022 update
-
-
-=======================
-     2022/09/02
-=======================
-
-
-=======================
-     2022/09/01
-=======================
-
-
-=======================
-     2022/08/31
-=======================
-
-
-=======================
-     2022/08/30
-=======================
-
-* Repository: https://github.com/chaldeaprjkt/packages_apps_GameSpace/commits/13
-
-4b343c2 Add android.permission.MANAGE_GAME_MODE whitelist
+83f2e4e7 vendor: build: Add target-files-package otatools to dudu-sign
 
 * Repository: https://github.com/LawnchairLauncher/lawnicons/commits/develop
 
-11e518d Merge pull request #640 from thismoon/develop
-90171c0 Merge pull request #627 from Golbinex/develop
+265b5c5 Link `air.com.unit9.bkFrApp` (French bk app) to `burger_king` icon
+
+
+=======================
+     2022/10/01
+=======================
+
+* Repository: https://github.com/LawnchairLauncher/lawnicons/commits/develop
+
+fedf02c Migrate Kapt to Napt (#715)
+
+
+=======================
+     2022/09/30
+=======================
+
+* Repository: https://github.com/LawnchairLauncher/lawnicons/commits/develop
+
+3336fcf Add Citi (#714)
+
+
+=======================
+     2022/09/29
+=======================
+
+* Repository: https://github.com/aLnProject/device_xiaomi_vayu-kernel/commits/main
+
+60dc2aa Update headers
+3c30462 aLn Zeta 4.14.294 LTO 0fe0e57ccf8b
+
+* Repository: https://github.com/LawnchairLauncher/lawnicons/commits/develop
+
+a0f2854 Speed up a bit (#711)
+
+
+=======================
+     2022/09/28
+=======================
+
+* Repository: https://github.com/LawnchairLauncher/lawnicons/commits/develop
+
+d7b87fd Icons 1 (#710)
+f4d2176 Add fave, imobile, firstcry (#709)
+54cb25c Add calendar, Camera connect, IDFC and few more (#706)
+2ab787a Add boursorama icon (#641)
 
 

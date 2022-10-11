@@ -3,6 +3,20 @@ Changelog
 
 [**FULL CHANGELOG**](https://github.com/BiancaProject/Changelog/raw/13/Changelog.txt)
 
+12 October 2022
+---------------
+
+* SystemUI: Add dual-tone light and dark themes for QS 
+* Add support per-app volume
+* Open the screenshot instead of edit
+* Screenrecord: Add blinking stop dot
+* Screenrecord: Add an option to record for longer
+* Screenrecord: Allow to reduce 3 second screen record timer
+* Bring back system icon packs
+* Add Sam, Victor, Rounded, Circular, Kai, Filled icons pack
+* Allow using 4G icon instead LTE
+* Add system font picker
+
 5 September 2022
 ----------------
 
