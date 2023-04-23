@@ -1,8 +1,6 @@
 Changelog
 =========
 
-[**FULL CHANGELOG**](https://github.com/BiancaProject/Changelog/raw/13/Changelog.txt)
-
 23 April 2023
 --------------
 
