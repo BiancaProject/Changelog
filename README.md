@@ -1,6 +1,11 @@
 Changelog
 =========
 
+29 April 2023
+--------------
+
+* Add back Refresh Rate in Settings
+
 23 April 2023
 --------------
 
