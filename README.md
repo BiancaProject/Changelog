@@ -1,6 +1,15 @@
 Changelog
 =========
 
+10 May 2023
+------------
+
+* May 2023 Security update merged
+* Add icon packs on Launcher3
+* Add network traffic indicator
+* Update themed icon from lawnicons
+* Add mic, camera, and location indicator toogle
+
 29 April 2023
 --------------
 
